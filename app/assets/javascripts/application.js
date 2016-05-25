@@ -12,5 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap.min
 //= require_tree .
+
+$(window).resize(function () 
+  { 
+    $('body').css('padding-top', parseInt($('#main-navbar').css("height"))+10);
+  });
+
+  $(window).load(function () 
+  { 
+    $('body').css('padding-top', parseInt($('#main-navbar').css("height"))+10);        
+  });

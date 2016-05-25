@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   
     #Relationships
-
+    has_many :notes
     #Accessible attributes outside of those permitted in controller
   attr_accessor :remember_token, :activation_token, :reset_token
   
@@ -14,14 +14,23 @@ class User < ActiveRecord::Base
 
     #Defines a regular expression for emails
   EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Za-z]{2,20}\z/i
+  USERNAME_REGEX = /\A[A-Za-z][A-Za-z0-9]+\z/i
+  PASSWORD_REGEX = /\A^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#%!]).{6,25}$\z/
+
+  
+  validates :firstname, :lastname, presense: true
   
     #Validations
   validates :username, presence: true, uniqueness: { case_sensitive: false }, 
-                       length: 3..25
+                    length: 3..25, format: USERNAME_REGEX
+ 
   validates :email, presence: true, uniqueness: {case_sensitive: false }, 
                     length: 6..255, format: EMAIL_REGEX
     
-  validates :password, confirmation: true, length: 6..35, allow_blank: true
+  validates :password, format: { with: PASSWORD_REGEX, 
+            message: "must be between 6 and 25 characters and contain 
+            at least 1 uppercase and 1 lowercase character and 1 number" },
+            allow_nil: true
     
   validates :password_confirmation, presence: true, on: [:create]
   
