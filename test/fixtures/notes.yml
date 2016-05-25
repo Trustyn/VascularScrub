@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Technician_id: 
+  notes: MyText
+
+two:
+  Technician_id: 
+  notes: MyText
