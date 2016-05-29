@@ -4,7 +4,9 @@
 $warning: Red;
 $nav_text_color: White;
 $default_border: #E6E6E6;
-$default_background: #2F4F4F;
+$default_background: #432F21;
+$normal_text: #1FD26A;
+
 
 @mixin box_sizing
 {
@@ -112,14 +114,14 @@ header
 body
 {
     background: $default_background;
-    
+  
     
 }
 
 h1
 {
     font-size: 3em;
-    color: #9932CC;
+    color: $normal_text;
 }
 
 .center
@@ -133,4 +135,9 @@ h1
 {
     font-size: 1em;
     border: 1px solid Green;
+}
+
+label
+{
+  color: $normal_text;
 }

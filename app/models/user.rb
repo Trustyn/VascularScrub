@@ -15,12 +15,13 @@ class User < ActiveRecord::Base
     #Defines a regular expression for emails
   EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Za-z]{2,20}\z/i
   USERNAME_REGEX = /\A[A-Za-z][A-Za-z0-9]+\z/i
-  PASSWORD_REGEX = /\A^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#%!]).{6,25}$\z/
+  PASSWORD_REGEX = /\A^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,25}$\z/
 
+  #Validations
+  validates :firstname, presence: true
   
-  validates :firstname, :lastname, presense: true
+  validates :lastname, presence: true
   
-    #Validations
   validates :username, presence: true, uniqueness: { case_sensitive: false }, 
                     length: 3..25, format: USERNAME_REGEX
  

@@ -1,0 +1,27 @@
+<div class="col-md-6 col-md-offset-2">
+  
+  <%= form_for @user do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+  
+    <p><%= f.label :username %>
+    <%=f.text_field :username, class: 'form-control' %></p>
+    
+    <p><%= f.label :firstname %>
+    <%= f.text_field :firstname, class: 'form-control' %></p>
+    
+    <p><%= f.label :lastname %>
+    <%=f.text_field :lastname, class: 'form-control' %></p>
+    
+    <p><%= f.label :email %>
+    <%=f.text_field :email, class: 'form-control' %></p>
+    
+    <p><%= f.label :password %>
+    <%=f.password_field :password, class: 'form-control' %></p>
+    
+    <p><%= f.label :password_confirmation %>
+    <%=f.password_field :password_confirmation, class: 'form-control' %></p>
+    
+    <p><%= f.submit "Create User" %></p>
+
+  <% end %>
+</div>

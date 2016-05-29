@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525052543) do
+ActiveRecord::Schema.define(version: 20160529055628) do
 
   create_table "bruits", force: :cascade do |t|
     t.string   "volume"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20160525052543) do
     t.text     "technologists_preliminary_impression"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.integer  "age"
+    t.string   "gender"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -85,11 +87,13 @@ ActiveRecord::Schema.define(version: 20160525052543) do
     t.string   "lastname"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "activation_digest"
     t.string   "reset_digest"
     t.string   "username"
+    t.boolean  "activated",         default: false
+    t.string   "remember_digest"
   end
 
 end

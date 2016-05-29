@@ -14,7 +14,6 @@ class UsersController < ApplicationController
       @user.send_activation_email
       redirect_to root_url
     else
-      flash.now.alert = "Form Error"
       render 'new'
     end
   end
@@ -57,7 +56,11 @@ class UsersController < ApplicationController
 private
   
   def user_params
-    params.require(:user).permit(:username, :password, :fname, :lname, :email, 
+    params.require(:user).permit(:username,
+                                 :firstname,
+                                 :lastname,
+                                 :email,
+                                 :password, 
                                  :password_confirmation)
   end
   
