@@ -1,12 +1,16 @@
-<header id="main-navbar" class="navbar navbar-fixed-top navbar-inverse">
-  <%= link_to image_tag("VascularLogo_Green.png", size: "500x150", alt: "logo"), 
-              root_path, class: "logo" %>  
-  <div class="container">
+<header id="main-navbar" class="navbar navbar-fixed-top navbar-background navbar-main">
+
+  <div class="container-left">
+  <%= link_to image_tag("VascularLogo_GreenSAF.png", size: "500x100", alt: "logo"), 
+              root_path, class: "logo" %>
+
+   
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <%= render 'layouts/links' %>
       </ul>
     </nav>
+  
   </div>
 </header>
 <br />

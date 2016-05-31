@@ -1,12 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$warning: Red;
+$warning: #FF4500;
 $nav_text_color: White;
 $default_border: #E6E6E6;
 $default_background: #432F21;
 $normal_text: #1FD26A;
-
+$system_message: #1FD26A;
+$hover_color: #333333;
+$topbar_color: #222222;
 
 @mixin box_sizing
 {
@@ -18,7 +20,7 @@ $normal_text: #1FD26A;
 .debug_dump
 {
   clear: both;
-  floar: left;
+  float: left;
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
@@ -26,10 +28,10 @@ $normal_text: #1FD26A;
 
 #error_explanation
 {
-  color: $warning;
+  color: $system_message;
   ul
   {
-    color: $warning;
+    color: $system_message;
     margin: 0 0 30px 0;
   }
 }
@@ -45,41 +47,44 @@ $normal_text: #1FD26A;
 
 header
 {
-
   &.navbar-fixed-top
   {
-    border-bottom: 5px outset white;
+    border-bottom: 3px outset $normal_text;
   }
-  
-
+  &.navbar-background
+  {
+    background-color: $topbar_color;
+  }
   &.navbar-main
   {
     nav
     {
       ul
       {
+        
         &.navbar-nav
         {
+          margin-right: 10px;
           li
           { 
             a
             {
               &.menu-tab
               {
-                color: white;
-                padding: 10px;
+                color: $normal_text;
+                padding: 15px;
                 text-shadow: 0 2px 2px rgba(0,0,0,.3);
 
                 &:hover
                 {
-                  border-radius: 12px 0 0 0;
-                  background-color: white;
+                  border-radius: 2px 0 0 0;
+                  background-color: $hover_color;
                 }
 
                 &:focus
                 {
-                  border-radius: 12px 0 0 0;
-                  background-color: white;
+                  border-radius: 2px 0 0 0;
+                  background-color: $hover_color;
                 }
               }
             }
@@ -90,22 +95,35 @@ header
   }
 }
 
+.dropdown-menu
+{
+  background-color: $topbar_color;
+  li
+  {
+    a{
+      color: $normal_text;
+      &:hover
+      {
+        background-color: $hover_color;
+        color: $normal_text;
+      }
+    }
+  }
+}
+
 .logo
 {
-  float: left;
+  img
+  { 
+    margin-top: 15px;
+  }
   margin-right: 10px;
   margin-left: 20px;
-  font-size: 3em;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
-  width: 100%;
-  text-shadow: 0 3px 3px rgba(0,0,0,.3);
+}
 
-  &:hover
-  {
-    text-decoration: none;
-  }
+.form-control
+{
+  margin-bottom: 10px;
 }
 
 
@@ -114,14 +132,29 @@ header
 body
 {
     background: $default_background;
-  
-    
 }
 
 h1
 {
     font-size: 3em;
     color: $normal_text;
+}
+thead
+{
+  background-color: $topbar_color;
+}
+th
+{
+  color: $normal_text;
+  padding: 5px;
+  padding-right: 5px;
+}
+
+td
+{
+  color: $normal_text;
+  padding: 5px;
+  padding-right: 5px;
 }
 
 .center
@@ -140,4 +173,35 @@ h1
 label
 {
   color: $normal_text;
+}
+.system-message
+{
+  color: $system_message;
+}
+
+.alert
+{
+  color: $warning;
+  font-size: 2.5em;
+  background-color: $default_background;
+  border: 0;
+}
+
+.btn-main
+{
+  background-color: $normal_text;
+  color: $default_background;
+  &:hover
+  {
+    background-color: $topbar_color; 
+    color: $normal_text;
+  }
+}
+
+select
+{
+  width: 100%;
+  border-radius: 3px;
+  font-size: 1.53em;
+  margin-bottom: 10px;
 }

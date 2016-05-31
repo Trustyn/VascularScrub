@@ -1,6 +1,6 @@
-class CreateTechnicians < ActiveRecord::Migration
+class CreateTechnologists < ActiveRecord::Migration
   def change
-    create_table :technicians do |t|
+    create_table :technologists do |t|
       t.string :firstname
       t.string :lastname
 

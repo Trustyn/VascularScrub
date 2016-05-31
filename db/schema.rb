@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529055628) do
+ActiveRecord::Schema.define(version: 20160530223124) do
 
   create_table "bruits", force: :cascade do |t|
     t.string   "volume"
@@ -28,11 +28,12 @@ ActiveRecord::Schema.define(version: 20160529055628) do
     t.float    "temporal_left"
     t.float    "radial_right"
     t.float    "radial_left"
-    t.integer  "neck_high_right"
-    t.integer  "neck_high_left"
+    t.integer  "neck_distal_right"
+    t.integer  "neck_distal_left"
     t.integer  "neck_mid_right"
-    t.integer  "neck_low_right"
-    t.integer  "neck_low_left"
+    t.integer  "neck_mid_left"
+    t.integer  "neck_proximal_right"
+    t.integer  "neck_proximal_left"
     t.integer  "supraclavicular_right"
     t.integer  "supraclavicular_left"
     t.integer  "chest_right"
@@ -62,20 +63,24 @@ ActiveRecord::Schema.define(version: 20160529055628) do
     t.datetime "updated_at",                           null: false
     t.integer  "age"
     t.string   "gender"
+    t.text     "patient_result"
+    t.integer  "technologist_id"
   end
+
+  add_index "carotid_exams", ["technologist_id"], name: "index_carotid_exams_on_technologist_id"
 
   create_table "notes", force: :cascade do |t|
-    t.integer  "technician_id"
+    t.integer  "technologist_id"
     t.integer  "user_id"
     t.text     "notes"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "notes", ["technician_id"], name: "index_notes_on_technician_id"
+  add_index "notes", ["technologist_id"], name: "index_notes_on_technologist_id"
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"
 
-  create_table "technicians", force: :cascade do |t|
+  create_table "technologists", force: :cascade do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.datetime "created_at", null: false

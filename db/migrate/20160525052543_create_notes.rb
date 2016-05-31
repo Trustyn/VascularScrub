@@ -1,7 +1,7 @@
 class CreateNotes < ActiveRecord::Migration
   def change
     create_table :notes do |t|
-      t.references :technician, index: true, foreign_key: true
+      t.references :technologist, index: true, foreign_key: true
       t.references :user, index: true, foreign_key: true
       
       t.text :notes

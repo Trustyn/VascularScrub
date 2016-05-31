@@ -1,10 +1,10 @@
-<h1>Welcome to Mountain View Medicals</h1>
+<h1>Welcome to VascularScrub</h1>
 
-<p>
+<p class="system-message">
   To activate your account and set your password click the link below:
 </p>
 
 <%= link_to "Activate Account", edit_account_activation_url(@user.activation_token,
                                                       email: @user.email) %>
  
-<p>This link will expire in two hours.</p>
+<p class="system-message">This link will expire in two hours.</p>

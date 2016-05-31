@@ -10,12 +10,12 @@ class CreateCarotidExams < ActiveRecord::Migration
       t.float :temporal_left
       t.float :radial_right
       t.float :radial_left
-      t.integer :neck_high_right
-      t.integer :neck_high_left
+      t.integer :neck_distal_right
+      t.integer :neck_distal_left
       t.integer :neck_mid_right
-      t.integer :neck_high_left
-      t.integer :neck_low_right
-      t.integer :neck_low_left
+      t.integer :neck_mid_left
+      t.integer :neck_proximal_right
+      t.integer :neck_proximal_left
       t.integer :supraclavicular_right
       t.integer :supraclavicular_left
       t.integer :chest_right
