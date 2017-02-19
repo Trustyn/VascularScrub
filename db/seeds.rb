@@ -2,7 +2,6 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 #Dropdown menu for bruits on carotid_exam form.
-
 Bruit.create(volume: "None")
 Bruit.create(volume: "Quiet")
 Bruit.create(volume: "Loud")
@@ -17,8 +16,4 @@ Technologist.create(firstname: "Sally", lastname: "P")
     #Branden Alder's
 User.create(username: "Trustyn", firstname: "Branden", lastname: "Alder",
             email: "trustyn@vascularscrub.com", password: "Password1",
-            password_confirmation: "Password1", activated: true)
-    #Chad Greene's
-User.create(username: "Chedder", firstname: "Chad", lastname: "Greene",
-            email: "chedder@vascularscrub.com", password: "Password1",
             password_confirmation: "Password1", activated: true)

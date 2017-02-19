@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   
     #Relationships
     has_many :notes
+    has_many :forms
     #Accessible attributes outside of those permitted in controller
   attr_accessor :remember_token, :activation_token, :reset_token
   
@@ -29,8 +30,8 @@ class User < ActiveRecord::Base
                     length: 6..255, format: EMAIL_REGEX
     
   validates :password, format: { with: PASSWORD_REGEX, 
-            message: "must be between 6 and 25 characters and contain 
-            at least 1 uppercase and 1 lowercase character and 1 number" },
+            message: "Password must be between 6 and 25 characters. It must contain 
+            at least 1 uppercase, 1 lowercase character, and 1 number" },
             allow_nil: true
     
   validates :password_confirmation, presence: true, on: [:create]

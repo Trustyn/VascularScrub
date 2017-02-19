@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530223124) do
+ActiveRecord::Schema.define(version: 20170219042330) do
 
   create_table "bruits", force: :cascade do |t|
     t.string   "volume"
@@ -68,6 +68,24 @@ ActiveRecord::Schema.define(version: 20160530223124) do
   end
 
   add_index "carotid_exams", ["technologist_id"], name: "index_carotid_exams_on_technologist_id"
+
+  create_table "forms", force: :cascade do |t|
+    t.integer  "technologists_id"
+    t.integer  "age"
+    t.string   "gender"
+    t.float    "bpRight"
+    t.float    "bpLeft"
+    t.string   "history"
+    t.string   "symptoms"
+    t.string   "prelimResults"
+    t.string   "patientResults"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+  end
+
+  add_index "forms", ["technologists_id"], name: "index_forms_on_technologists_id"
+  add_index "forms", ["user_id"], name: "index_forms_on_user_id"
 
   create_table "notes", force: :cascade do |t|
     t.integer  "technologist_id"

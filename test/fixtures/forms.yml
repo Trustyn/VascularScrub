@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  technologists_id: 
+  age: 
+  gender: MyString
+  bpRight: 1.5
+  bpLeft: 1.5
+  history: MyString
+  symptoms: MyString
+  prelimResults: MyString
+  patientResults: MyString
+
+two:
+  technologists_id: 
+  age: 
+  gender: MyString
+  bpRight: 1.5
+  bpLeft: 1.5
+  history: MyString
+  symptoms: MyString
+  prelimResults: MyString
+  patientResults: MyString
