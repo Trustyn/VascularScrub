@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  Technician_id: 
-  notes: MyText
+  name: MyString
+  content: MyString
 
 two:
-  Technician_id: 
-  notes: MyText
+  name: MyString
+  content: MyString
