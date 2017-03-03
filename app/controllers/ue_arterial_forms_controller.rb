@@ -1,0 +1,2 @@
+class UeArterialFormsController < ApplicationController
+end

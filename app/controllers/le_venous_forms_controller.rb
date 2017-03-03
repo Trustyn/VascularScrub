@@ -1,0 +1,2 @@
+class LeVenousFormsController < ApplicationController
+end

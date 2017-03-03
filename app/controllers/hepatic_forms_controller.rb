@@ -1,0 +1,2 @@
+class HepaticFormsController < ApplicationController
+end

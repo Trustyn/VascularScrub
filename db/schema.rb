@@ -11,12 +11,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220044026) do
+ActiveRecord::Schema.define(version: 20170303104257) do
 
   create_table "bruits", force: :cascade do |t|
     t.string   "volume"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "carotid_forms", force: :cascade do |t|
+    t.float    "pulseCarotidRight"
+    t.float    "pulseCarotidLeft"
+    t.float    "pulseTemporalRight"
+    t.float    "pulseTemporalLeft"
+    t.float    "pulseRadialRight"
+    t.float    "pulseRadialLeft"
+    t.float    "bruitsDisNeckRight"
+    t.float    "bruitsDisNeckLeft"
+    t.float    "bruitsMidNeckRight"
+    t.float    "bruitsMidNeckLeft"
+    t.float    "bruitsProxNeckRight"
+    t.float    "bruitsProxNeckLeft"
+    t.float    "bruitsSupraRight"
+    t.float    "bruitsSupraLeft"
+    t.float    "bruitsChestRight"
+    t.float    "bruitsChestLeft"
+    t.float    "vertebralReversalRight"
+    t.float    "vertebralReversalLeft"
+    t.float    "ophthalmicReversalRight"
+    t.float    "ophthalmicReversalLeft"
+    t.float    "dicaPSVRight"
+    t.float    "dicaPSVLeft"
+    t.float    "dicaEDVRight"
+    t.float    "dicaEDVLeft"
+    t.float    "micaPSVRight"
+    t.float    "micaPSVLeft"
+    t.float    "micaEDVRight"
+    t.float    "micaEDVLeft"
+    t.float    "picaPSVRight"
+    t.float    "picaPSVLeft"
+    t.float    "picaEDVRight"
+    t.float    "picaEDVLeft"
+    t.float    "ecaPSVRight"
+    t.float    "ecaPSVLeft"
+    t.float    "ecaEDVRight"
+    t.float    "ecaEDVLeft"
+    t.float    "dccaPSVRight"
+    t.float    "dccaPSVLeft"
+    t.float    "dccaEDVRight"
+    t.float    "dccaEDVLeft"
+    t.float    "pccaPSVRight"
+    t.float    "pccaPSVLeft"
+    t.float    "pccaEDVRight"
+    t.float    "pccaEDVLeft"
+    t.float    "vertebralPSVRight"
+    t.float    "vertebralPSVLeft"
+    t.float    "vertebralEDVRight"
+    t.float    "vertebralEDVLeft"
+    t.float    "subclavianPSVRight"
+    t.float    "subclavianPSVLeft"
+    t.float    "subclavianEDVRight"
+    t.float    "subclavianEDVLeft"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "forms", force: :cascade do |t|
@@ -36,6 +93,156 @@ ActiveRecord::Schema.define(version: 20170220044026) do
 
   add_index "forms", ["technologists_id"], name: "index_forms_on_technologists_id"
   add_index "forms", ["user_id"], name: "index_forms_on_user_id"
+
+  create_table "hepatic_forms", force: :cascade do |t|
+    t.boolean  "organEnlarge"
+    t.boolean  "portalHyperTension"
+    t.boolean  "cirrhosis"
+    t.boolean  "ascitites"
+    t.boolean  "varices"
+    t.boolean  "shunt"
+    t.boolean  "transplant"
+    t.boolean  "labResults"
+    t.string   "otherHistory"
+    t.integer  "splenicSize"
+    t.boolean  "splenicThrombus"
+    t.float    "splenicVelocity"
+    t.string   "splenicFlowDir"
+    t.integer  "smvSize"
+    t.boolean  "smvThrombus"
+    t.float    "smvVelocity"
+    t.string   "smvFlowDir"
+    t.integer  "portalMainSize"
+    t.boolean  "portalMainThrombus"
+    t.float    "portalMainVelocity"
+    t.string   "portalMainFlowDir"
+    t.integer  "portalRightSize"
+    t.boolean  "portalRightThrombus"
+    t.float    "portalRightVelocity"
+    t.string   "portalRightFlowDir"
+    t.integer  "portalLeftSize"
+    t.boolean  "portalLeftThrombus"
+    t.float    "portalLeftVelocity"
+    t.string   "portalLeftFlowDir"
+    t.integer  "hepaticMainSize"
+    t.boolean  "hepaticMainThrombus"
+    t.float    "hepaticMainVelocity"
+    t.string   "hepaticMainFlowDir"
+    t.integer  "hepaticRightSize"
+    t.boolean  "hepaticRightThrombus"
+    t.float    "hepaticRightVelocity"
+    t.string   "hepaticRightFlowDir"
+    t.integer  "hepaticLeftSize"
+    t.boolean  "hepaticLeftThrombus"
+    t.float    "hepaticLeftVelocity"
+    t.string   "hepaticLeftFlowDir"
+    t.integer  "ivcSize"
+    t.boolean  "ivcThrombus"
+    t.float    "ivcVelocity"
+    t.string   "ivcFlowDir"
+    t.integer  "renalRightSize"
+    t.boolean  "renalRightThrombus"
+    t.float    "renalRightVelocity"
+    t.string   "renalRightFlowDir"
+    t.integer  "renalLeftSize"
+    t.boolean  "renalLeftThrombus"
+    t.float    "renalLeftVelocity"
+    t.string   "renalLeftFlowDir"
+    t.integer  "liverSize"
+    t.boolean  "liverThrombus"
+    t.float    "liverVelocity"
+    t.string   "liverFlowDir"
+    t.integer  "spleenSize"
+    t.boolean  "spleenThrombus"
+    t.float    "spleenVelocity"
+    t.string   "spleenFlowDir"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "le_arterial_forms", force: :cascade do |t|
+    t.float    "ankleBPRight"
+    t.float    "ankleBPLeft"
+    t.boolean  "indications"
+    t.boolean  "prevSurgery"
+    t.boolean  "vascularDisease"
+    t.boolean  "heartDisease"
+    t.boolean  "smoking"
+    t.boolean  "injury"
+    t.boolean  "medications"
+    t.string   "otherHistory"
+    t.boolean  "claudication"
+    t.boolean  "restPain"
+    t.boolean  "ulcerations"
+    t.boolean  "gangrene"
+    t.string   "otherSymptoms"
+    t.float    "abiRight"
+    t.float    "abiLeft"
+    t.float    "commFemoralProxRight"
+    t.float    "commFemoralProxLeft"
+    t.float    "commFemoralDistRight"
+    t.float    "commFemoralDistLeft"
+    t.float    "supFemoralProxRight"
+    t.float    "supFemoralProxLeft"
+    t.float    "supFemoralDistRight"
+    t.float    "supFemoralDistLeft"
+    t.float    "deepFemoralProxRight"
+    t.float    "deepFemoralProxLeft"
+    t.float    "deepFemoralDistRight"
+    t.float    "deepFemoralDistLeft"
+    t.float    "poplitealProxRight"
+    t.float    "poplitealProxLeft"
+    t.float    "poplitealDistRight"
+    t.float    "poplitealDistLeft"
+    t.float    "antTibialProxRight"
+    t.float    "antTibialProxLeft"
+    t.float    "antTibialDistRight"
+    t.float    "antTibialDistLeft"
+    t.float    "postTibialProxRight"
+    t.float    "postTibialProxLeft"
+    t.float    "postTibialDistRight"
+    t.float    "postTibialDistLeft"
+    t.float    "peronealProxRight"
+    t.float    "peronealProxLeft"
+    t.float    "peronealDistRight"
+    t.float    "peronealDistLeft"
+    t.float    "otherProxRight"
+    t.float    "otherProxLeft"
+    t.float    "otherDistRight"
+    t.float    "otherDistLeft"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "le_venous_forms", force: :cascade do |t|
+    t.string   "admittingDX"
+    t.boolean  "pulEmb"
+    t.boolean  "dvt"
+    t.string   "otherSurgery"
+    t.boolean  "medications"
+    t.boolean  "commFemoralRight"
+    t.boolean  "commFemoralLeft"
+    t.boolean  "commFemoralAcuteRight"
+    t.boolean  "commFemoralAcuteLeft"
+    t.boolean  "supFemoralRight"
+    t.boolean  "supFemoralLeft"
+    t.boolean  "supFemoralAcuteRight"
+    t.boolean  "supFemoralAcuteLeft"
+    t.boolean  "poplitealRight"
+    t.boolean  "poplitealLeft"
+    t.boolean  "poplitealAcuteRight"
+    t.boolean  "poplitealAcuteLeft"
+    t.boolean  "postTibialRight"
+    t.boolean  "postTibialLeft"
+    t.boolean  "postTibialAcuteRight"
+    t.boolean  "postTibialAcuteLeft"
+    t.boolean  "peronealRight"
+    t.boolean  "peronealLeft"
+    t.boolean  "peronealAcuteRight"
+    t.boolean  "peronealAcuteLeft"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "mesenteric_forms", force: :cascade do |t|
     t.boolean  "abdominPain"
@@ -104,14 +311,13 @@ ActiveRecord::Schema.define(version: 20170220044026) do
   create_table "notes", force: :cascade do |t|
     t.string   "name"
     t.string   "content"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "technologist_id"
-    t.integer  "form_id"
+    t.integer  "technologists_id"
+    t.integer  "forms_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
-  add_index "notes", ["form_id"], name: "index_notes_on_form_id"
-  add_index "notes", ["technologist_id"], name: "index_notes_on_technologist_id"
+  add_index "notes", ["forms_id"], name: "index_notes_on_forms_id"
 
   create_table "renal_forms", force: :cascade do |t|
     t.boolean  "hypertension"
@@ -374,6 +580,12 @@ ActiveRecord::Schema.define(version: 20170220044026) do
     t.string   "username"
     t.boolean  "activated",         default: false
     t.string   "remember_digest"
+  end
+
+  create_table "waveforms", force: :cascade do |t|
+    t.string   "venousFlow"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

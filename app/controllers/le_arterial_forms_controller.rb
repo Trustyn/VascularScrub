@@ -1,0 +1,2 @@
+class LeArterialFormsController < ApplicationController
+end

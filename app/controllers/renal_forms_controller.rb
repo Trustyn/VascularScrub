@@ -1,0 +1,2 @@
+class RenalFormsController < ApplicationController
+end

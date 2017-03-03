@@ -1,0 +1,2 @@
+class UeVenousFormsController < ApplicationController
+end

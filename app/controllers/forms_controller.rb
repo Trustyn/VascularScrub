@@ -9,7 +9,7 @@ class FormsController < ApplicationController
   def create
     @form = Form.new(form_params)
     if @form.save
-      flash.notice = "Form creation successful."
+      flash.notice = "Form Created Succesfully"
       redirect_to @form
     else
       render 'new'
@@ -24,7 +24,6 @@ class FormsController < ApplicationController
   
   def index
     @page_title = "All Forms"
-    #@user = User.find(params[:user])
     @forms = current_user.forms
   end
   

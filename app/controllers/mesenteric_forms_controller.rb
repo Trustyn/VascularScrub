@@ -1,0 +1,2 @@
+class MesentericFormsController < ApplicationController
+end
