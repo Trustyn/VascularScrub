@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   
   resources :users
   resources :account_activation, only: :edit
-  #resources :forms
-  #resources :carotid_exams
+  resources :forms
+
 end

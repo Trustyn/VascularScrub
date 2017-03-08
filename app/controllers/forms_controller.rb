@@ -37,7 +37,7 @@ class FormsController < ApplicationController
   
   def update
     if @form.update_attributes(form_params)
-      flash.alert = "Form updated."
+      flash.alert = "Form updated"
       redirect_to @form
     else
       render 'edit'
@@ -46,7 +46,7 @@ class FormsController < ApplicationController
   
   def destroy
     Form.find(params[:id]).destroy
-    flash.alert = "Form Deleted."
+    flash.alert = "Form Deleted"
     redirect_to current_user
     
   end

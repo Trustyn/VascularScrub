@@ -7,7 +7,7 @@ class CarotidFormsController < ApplicationController
     def create
         @carotid_form = CarotidForm.new(carotid_params)
         if(@carotid_form.save)
-            flash[:success] = "Form Created Succesfully"
+            flash[:success] = "Carotid Form Created Succesfully"
             redirect_to @carotid_form
         else
             render 'new'
@@ -31,7 +31,7 @@ class CarotidFormsController < ApplicationController
     def update
         if @carotid_form.update_attributes(carotid_params)
             flash.alert = "Carotid Form Updated"
-            redirect_to @carotid_forms
+            redirect_to @carotid_form
         else
             render 'edit'
         end
@@ -98,5 +98,10 @@ private
                                                 :subclavianPSVLeft,
                                                 :subclavianEDVRight,
                                                 :subclavianEDVLeft)
+    end
+    
+    def correct_user
+        @user = User.find(params[:id])
+        redirect_to(root_url) unless current_user?@user
     end
 end
