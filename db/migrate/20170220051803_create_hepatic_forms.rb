@@ -1,7 +1,7 @@
 class CreateHepaticForms < ActiveRecord::Migration
   def change
     create_table :hepatic_forms do |t|
-      
+      t.references :form, index: true, foreign_key: true
       t.boolean :organEnlarge
       t.boolean :portalHyperTension
       t.boolean :cirrhosis

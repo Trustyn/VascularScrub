@@ -1,2 +1,90 @@
 class LeVenousFormsController < ApplicationController
+    
+    def new
+        @le_venous_form = LeVenousForm.new
+        @le_venous_form.form = Form.new
+        @le_venous_form.form.technologist = Technologist.new
+    end
+    
+    def create
+        @le_venous_form = LeVenousForm.new(le_venous_params)
+        if(@le_venous_form.save)
+            flash[:success] = "LE Venous Form Created Succesfully"
+            redirect_to @le_venous_form
+        else
+            render 'new'
+        end
+    end
+    
+    def show
+        @le_venous_form = LeVenousForm.find(params[:id])
+    end
+    
+    def index
+        @page_title = "All LE Venous Forms"
+        @le_venous_forms = current_user.le_venous_forms
+    end
+    
+    def edit
+        @page_title = "Edit LE Venous Form"
+        @le_venous_form = LeVenousForm.find(params[:id])
+    end
+    
+    def update
+        if @le_venous_form.update_attributes(le_venous_params)
+            flash.alert = "LeVenous Form Updated"
+            redirect_to @le_venous_form
+        else
+            render 'edit'
+        end
+    end
+    
+    def destroy
+        le_venousForm.find(params[:id]).destroy
+        flash.alert = "LE Venous Form Deleted"
+        redirect_to current_user
+    end
+    
+private
+    def le_venous_params
+        params.require(:le_venous_form).permit(   :forms [:age,
+                                                          :gender,
+                                                          :technologist_id,
+                                                          :bpRight,
+                                                          :bpLeft,
+                                                          :history,
+                                                          :symptoms,
+                                                          :prelimResults,
+                                                          :patientResults],
+                                                          :admittingDX,
+                                                          :pulEmb,
+                                                          :dvt,
+                                                          :otherSurgery,
+                                                          :medications,
+                                                          :commFemoralRight,
+                                                          :commFemoralLeft,
+                                                          :commFemoralAcuteRight,
+                                                          :commFemoralAcuteLeft,
+                                                          :supFemoralRight,
+                                                          :supFemoralLeft,
+                                                          :supFemoralAcuteRight,
+                                                          :supFemoralAcuteLeft,
+                                                          :poplitealRight,
+                                                          :poplitealLeft,
+                                                          :poplitealAcuteRight,
+                                                          :poplitealAcuteLeft,
+                                                          :postTibialRight,
+                                                          :postTibialLeft,
+                                                          :postTibialAcuteRight,
+                                                          :postTibialAcuteLeft,
+                                                          :peronealRight,
+                                                          :peronealLeft,
+                                                          :peronealAcuteRight,
+                                                          :peronealAcuteLeft)
+    end
+    
+    def correct_user
+        @user = User.find(params[:id])
+        redirect_to(root_url) unless current_user?@user
+    end
 end

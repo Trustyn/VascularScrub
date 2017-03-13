@@ -1,41 +1,43 @@
 <% if logged_in? %>
-  <!-- Dropdown menu for Neck -->
+
+    <!-- Dropdown menu for Forms -->
   <li class="dropdown">
     <a href="#" class="dropdown-toggle menu-tab" data-toggle="dropdown">
-    Neck <b class="caret"></b></a>
+    Forms <b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><%= link_to "Carotid Exam", '#' %></li>
+      <li><%= link_to "Carotid Exam", new_carotid_form_path %></li>
+      <li><%= link_to "UE Arterial Exam", new_ue_arterial_form_path %></li>
+      <li><%= link_to "UE Venous Exam", new_ue_venous_form_path %></li>      
+      <li><%= link_to "Hepatic Exam", new_hepatic_form_path %></li>
+      <li><%= link_to "Mesenteric Exam", new_mesenteric_form_path %></li>
+      <li><%= link_to "Renal Exam", new_renal_form_path %></li>      
+      <li><%= link_to "LE Arterial Exam", new_le_arterial_form_path %></li>
+      <li><%= link_to "LE Venous Exam", new_le_venous_form_path %></li>      
+      <li class= "divider"></li>
+      <li><%= link_to "Edit Form", '#' %></li>
+      <li><%= link_to "Remove Form", '#' %></li>
+  
     </ul>
   </li>
   
-  <!-- Dropdown menu for Upper Extremity -->
+  <!-- Dropdown menu for Technologists -->
   <li class="dropdown">
     <a href="#" class="dropdown-toggle menu-tab" data-toggle="dropdown">
-    Upper Extremity <b class="caret"></b></a>
+    Technologists <b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><%= link_to "UE Arterial Exam", '#' %></li>
-      <li><%= link_to "UE Venous Exam", '#' %></li>
+      <li><%= link_to "Add Tech", '#' %></li>
+      <li><%= link_to "Remove Tech", '#' %></li>
     </ul>
   </li>
   
-  <!-- Dropdown menu for Abdominal -->
+  <!-- Dropdown menu for Notes -->
   <li class="dropdown">
     <a href="#" class="dropdown-toggle menu-tab" data-toggle="dropdown">
-    Abdominal <b class="caret"></b></a>
+    Notes <b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><%= link_to "Hepatic Exam", '#' %></li>
-      <li><%= link_to "Mesenteric Exam", '#' %></li>
-      <li><%= link_to "Renal Exam", '#' %></li>
-    </ul>
-  </li>
-  
-  <!-- Dropdown menu for Lower Extremity -->
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle menu-tab" data-toggle="dropdown">
-    Lower Extremity <b class="caret"></b></a>
-    <ul class="dropdown-menu">
-      <li><%= link_to "LE Arterial Exam", '#' %></li>
-      <li><%= link_to "LE Venous Exam", '#' %></li>
+      <li><%= link_to "Add Note", '#' %></li>
+      <li><%= link_to "Edit Note", '#' %></li>
+      <li><%= link_to "Remove Note", '#' %></li>
     </ul>
   </li>
   
@@ -47,24 +49,14 @@
       <li><%= link_to "Premade Analytics 1", '#' %></li>
       <li><%= link_to "Premade Analytics 2", '#' %></li>
       <li><%= link_to "Premade Analytics 3", '#' %></li>
+      <li class= "divider"></li>
       <li><%= link_to "Create Custom Analysis", '#' %></li>
-  
     </ul>
   </li>
   
-  <!-- Dropdown menu for User -->
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle menu-tab" data-toggle="dropdown">
-    Users <b class="caret"></b></a>
-    <ul class="dropdown-menu">
-        <li><%= link_to "Technician List", '#' %></li>
-        <li><%= link_to "Notes List", '#' %></li>
-        <li class="divider"></li>
-        <!-- Users only have the ability to log out currently -->
-      <li><%= link_to "Edit Profile", '#' %></li>
-        <li><%= link_to "Log Out", logout_path, method: :delete %></li>
-    </ul>
-  </li>
+  <!-- Users only have the ability to log out currently -->
+  <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+
   <% else %>
   <li><%= link_to "Register", new_user_path, class: "menu-tab" %></li>
 <% end %>

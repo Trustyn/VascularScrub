@@ -1,7 +1,7 @@
 class CreateLeVenousForms < ActiveRecord::Migration
   def change
     create_table :le_venous_forms do |t|
-
+      t.references :form, index: true, foreign_key: true
       t.string :admittingDX
       t.boolean :pulEmb
       t.boolean :dvt

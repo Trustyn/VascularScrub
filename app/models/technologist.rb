@@ -1,3 +1,3 @@
 class Technologist < ActiveRecord::Base
-    has_many :carotid_exams
+    has_many :forms
 end

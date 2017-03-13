@@ -9,5 +9,12 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activation, only: :edit
   resources :forms
-
+  resources :carotid_forms
+  resources :ue_arterial_forms
+  resources :ue_venous_forms
+  resources :renal_forms
+  resources :mesenteric_forms
+  resources :hepatic_forms
+  resources :le_arterial_forms
+  resources :le_venous_forms
 end

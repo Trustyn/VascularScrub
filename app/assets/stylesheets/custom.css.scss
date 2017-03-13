@@ -142,8 +142,13 @@ header
 .form-control
 {
   margin-bottom: 5px;
+  
 }
 
+.text-box
+{
+  
+}
 
 
 //Globals//
@@ -156,7 +161,15 @@ h1
 {
     font-size: 3em;
     color: $normal_text;
+    text-align: center;
 }
+
+h2
+{
+  font-size: 2em;
+  color: $normal_text;
+}
+
 thead
 {
   background-color: $topbar_color;

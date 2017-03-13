@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170303104257) do
   end
 
   create_table "carotid_forms", force: :cascade do |t|
+    t.integer  "form_id"
     t.float    "pulseCarotidRight"
     t.float    "pulseCarotidLeft"
     t.float    "pulseTemporalRight"
@@ -76,8 +77,10 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.datetime "updated_at",              null: false
   end
 
+  add_index "carotid_forms", ["form_id"], name: "index_carotid_forms_on_form_id"
+
   create_table "forms", force: :cascade do |t|
-    t.integer  "technologists_id"
+    t.integer  "technologist_id"
     t.integer  "age"
     t.string   "gender"
     t.float    "bpRight"
@@ -86,15 +89,16 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.string   "symptoms"
     t.string   "prelimResults"
     t.string   "patientResults"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "user_id"
   end
 
-  add_index "forms", ["technologists_id"], name: "index_forms_on_technologists_id"
+  add_index "forms", ["technologist_id"], name: "index_forms_on_technologist_id"
   add_index "forms", ["user_id"], name: "index_forms_on_user_id"
 
   create_table "hepatic_forms", force: :cascade do |t|
+    t.integer  "form_id"
     t.boolean  "organEnlarge"
     t.boolean  "portalHyperTension"
     t.boolean  "cirrhosis"
@@ -160,7 +164,10 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.datetime "updated_at",           null: false
   end
 
+  add_index "hepatic_forms", ["form_id"], name: "index_hepatic_forms_on_form_id"
+
   create_table "le_arterial_forms", force: :cascade do |t|
+    t.integer  "form_id"
     t.float    "ankleBPRight"
     t.float    "ankleBPLeft"
     t.boolean  "indications"
@@ -214,7 +221,10 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.datetime "updated_at",           null: false
   end
 
+  add_index "le_arterial_forms", ["form_id"], name: "index_le_arterial_forms_on_form_id"
+
   create_table "le_venous_forms", force: :cascade do |t|
+    t.integer  "form_id"
     t.string   "admittingDX"
     t.boolean  "pulEmb"
     t.boolean  "dvt"
@@ -244,7 +254,10 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.datetime "updated_at",            null: false
   end
 
+  add_index "le_venous_forms", ["form_id"], name: "index_le_venous_forms_on_form_id"
+
   create_table "mesenteric_forms", force: :cascade do |t|
+    t.integer  "form_id"
     t.boolean  "abdominPain"
     t.boolean  "weightLoss"
     t.boolean  "chronicDiarrhea"
@@ -308,6 +321,8 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.datetime "updated_at",          null: false
   end
 
+  add_index "mesenteric_forms", ["form_id"], name: "index_mesenteric_forms_on_form_id"
+
   create_table "notes", force: :cascade do |t|
     t.string   "name"
     t.string   "content"
@@ -320,6 +335,7 @@ ActiveRecord::Schema.define(version: 20170303104257) do
   add_index "notes", ["forms_id"], name: "index_notes_on_forms_id"
 
   create_table "renal_forms", force: :cascade do |t|
+    t.integer  "form_id"
     t.boolean  "hypertension"
     t.boolean  "atherosclerosis"
     t.boolean  "renalStenosis"
@@ -465,6 +481,8 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.datetime "updated_at",           null: false
   end
 
+  add_index "renal_forms", ["form_id"], name: "index_renal_forms_on_form_id"
+
   create_table "technologists", force: :cascade do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -473,6 +491,7 @@ ActiveRecord::Schema.define(version: 20170303104257) do
   end
 
   create_table "ue_arterial_forms", force: :cascade do |t|
+    t.integer  "form_id"
     t.boolean  "vasDisease"
     t.boolean  "smoking"
     t.boolean  "heartDisease"
@@ -514,7 +533,10 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.datetime "updated_at",         null: false
   end
 
+  add_index "ue_arterial_forms", ["form_id"], name: "index_ue_arterial_forms_on_form_id"
+
   create_table "ue_venous_forms", force: :cascade do |t|
+    t.integer  "form_id"
     t.boolean  "recentEvasiveProc"
     t.boolean  "recentAVFistula"
     t.string   "admittingDisease"
@@ -567,6 +589,8 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
+
+  add_index "ue_venous_forms", ["form_id"], name: "index_ue_venous_forms_on_form_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "firstname"

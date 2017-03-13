@@ -2,6 +2,8 @@ class CarotidFormsController < ApplicationController
     
     def new
         @carotid_form = CarotidForm.new
+        @carotid_form.form = Form.new
+        @carotid_form.form.technologist = Technologist.new
     end
     
     def create
@@ -45,7 +47,15 @@ class CarotidFormsController < ApplicationController
     
 private
     def carotid_params
-        params.require(:carotid_form).permit(   
+        params.require(:carotid_form).permit(   :forms [:age,
+                                                :gender,
+                                                :technologist_id,
+                                                :bpRight,
+                                                :bpLeft,
+                                                :history,
+                                                :symptoms,
+                                                :prelimResults,
+                                                :patientResults],
                                                 :pulseCarotidRight,
                                                 :pulseCarotidLeft,
                                                 :pulseTemporalRight,
