@@ -1,15 +1,15 @@
 class UeArterialFormsController < ApplicationController
 
     def new
-        @ue_arterial_form = UeArterialForm.new
+        @ue_arterial_form = current_user.ue_arterial_forms.build
         @ue_arterial_form.form = Form.new
-        @ue_arterial_form.form.technologist = Technologist.new
+        @btnText = "Create"
     end
     
     def create
-        @ue_arterial_form = UeArterialForm.new(ue_arterial_params)
+        @ue_arterial_form = current_user.ue_arterial_forms.build(ue_arterial_params)
         if(@ue_arterial_form.save)
-            flash[:success] = "UE Arterial Form Created Succesfully"
+            flash[:success] = "UE Arterial Form Created"
             redirect_to @ue_arterial_form
         else
             render 'new'
@@ -22,15 +22,17 @@ class UeArterialFormsController < ApplicationController
     
     def index
         @page_title = "All UE Arterial Forms"
-        @ue_arterial_form = current_user.ue_arterial_forms
+        @ue_arterial_form = UeArterialForm.all
     end
     
     def edit
         @page_title = "Edit UE Arterial Form"
         @ue_arterial_form = UeArterialForm.find(params[:id])
+        @btnText = "Update"
     end
     
     def update
+        @ue_arterial_form = UeArterialForm.find(params[:id])
         if @ue_arterial_form.update_attributes(ue_arterial_params)
             flash.alert = "UE Arterial Form Updated"
             redirect_to @ue_arterial_form

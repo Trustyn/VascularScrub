@@ -2,6 +2,7 @@ class CreateLeArterialForms < ActiveRecord::Migration
   def change
     create_table :le_arterial_forms do |t|
       t.references :form, index: true, foreign_key: true
+      t.references :bruit, index: true, foreign_key: true
       t.float :ankleBPRight
       t.float :ankleBPLeft
       t.boolean :indications

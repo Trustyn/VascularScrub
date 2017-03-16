@@ -4,13 +4,12 @@ class CarotidFormsController < ApplicationController
         @carotid_form = current_user.carotid_forms.build
         @carotid_form.form = Form.new
         @btnText = "Create"
-        #@carotid_form.form.technologist = Technologist.new
     end
     
     def create
         @carotid_form = current_user.carotid_forms.build(carotid_params)
         if(@carotid_form.save)
-            flash[:success] = "Carotid Form Created Succesfully"
+            flash[:success] = "Carotid Form Created"
             redirect_to @carotid_form
         else
             render 'new'
@@ -23,7 +22,7 @@ class CarotidFormsController < ApplicationController
     
     def index
         @page_title = "All Carotid Forms"
-        @carotid_forms = current_user.carotid_forms
+        @carotid_forms = CarotidForm.all
     end
     
     def edit

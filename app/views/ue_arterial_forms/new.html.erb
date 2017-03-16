@@ -1,24 +1,3 @@
-<%= form_for @ue_arterial_form do |f| %>
-<h1>UE Arterial Form</h1>
-    <%= fields_for :form do |ff| %>
-    <%= ff.label "Technologist" %> <br/>
-    <%= ff.select :technologist_id, options_for_select(Technologist.all.map{|s|["#{s.firstname} #{s.lastname}", s.id]},
-                                                   selected: @ue_arterial_form.form.technologist_id),
-                                                   class: "form-control" %> <br/>
-    <%= ff.label "Age" %> <br/>
-    <%= ff.number_field :age_id %> <br/>
-    <%= ff.label "Gender" %> <br/>
-    <%= ff.select :gender_id, options_for_select(Gender.all.map{|s|[s.gender, s.id]},
-                                                   selected: @ue_arterial_form.form.gender),
-                                                   class: "form-control" %> <br/>
-    <%= ff.label "Blood Pressure Right" %> <br/>
-    <%= ff.number_field :bpRight_id %> <br/>
-    <%= ff.label "Blood Pressure Left" %> <br/>
-    <%= ff.number_field :bpLeft_id %> <br/>
-    <%= ff.label "Other History" %> <br/>
-    <%= ff.text_field :history_id %> <br/>
-    <%= ff.label "Other Symptoms" %> <br/><br/>
-    <%= ff.text_field :symptoms_id %> <br/>
-    
-    <% end %>
-<% end %>
+<h1>Create UE Arterial Form</h1>
+
+<%= render 'form' %>

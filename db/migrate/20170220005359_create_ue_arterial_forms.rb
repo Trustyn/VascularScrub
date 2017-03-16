@@ -2,6 +2,7 @@ class CreateUeArterialForms < ActiveRecord::Migration
   def change
     create_table :ue_arterial_forms do |t|
       t.references :form, index: true, foreign_key: true
+      t.references :bruit, index: true, foreign_key: true
       t.boolean :vasDisease
       t.boolean :smoking
       t.boolean :heartDisease

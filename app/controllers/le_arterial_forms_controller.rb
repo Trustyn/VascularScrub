@@ -1,13 +1,13 @@
 class LeArterialFormsController < ApplicationController
     
     def new
-        @le_arterial_form = LeArterialForm.new
+        @le_arterial_form = current_user.le_arterial_forms.build
         @le_arterial_form.form = Form.new
-        @le_arterial_form.form.technologist = Technologist.new
+        @btnText = "Create"
     end
     
     def create
-        @le_arterial_form = LeArterialForm.new(le_arterial_params)
+        @le_arterial_form = current_user.le_arterial_forms.build(le_arterial_params)
         if(@le_arterial_form.save)
             flash[:success] = LE Arterial Form Created Succesfully
             redirect_to @le_arterial_form
@@ -22,15 +22,17 @@ class LeArterialFormsController < ApplicationController
     
     def index
         @page_title = All LE Arterial Forms
-        @le_arterial_forms = current_user.le_arterial_forms
+        @le_arterial_forms = LeArterialForm.all
     end
     
     def edit
         @page_title = Edit LE Arterial Form
         @le_arterial_form = LeArterialForm.find(params[:id])
+        @btnText = "Update"
     end
     
     def update
+        @hepatic_form = HepaticForm.find(params[:id])
         if @le_arterial_form.update_attributes(le_arterial_params)
             flash.alert = LE Arterial Form Updated
             redirect_to @le_arterial_form

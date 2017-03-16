@@ -1,13 +1,13 @@
 class LeVenousFormsController < ApplicationController
     
     def new
-        @le_venous_form = LeVenousForm.new
+        @le_venous_form = current_user.le_venous_forms.build
         @le_venous_form.form = Form.new
-        @le_venous_form.form.technologist = Technologist.new
+        @btnText = "Create"
     end
     
     def create
-        @le_venous_form = LeVenousForm.new(le_venous_params)
+        @le_venous_form = current_user.le_venous_forms.build(le_venous_params)
         if(@le_venous_form.save)
             flash[:success] = "LE Venous Form Created Succesfully"
             redirect_to @le_venous_form
@@ -22,15 +22,17 @@ class LeVenousFormsController < ApplicationController
     
     def index
         @page_title = "All LE Venous Forms"
-        @le_venous_forms = current_user.le_venous_forms
+        @le_venous_forms = LeVenousForm.all
     end
     
     def edit
         @page_title = "Edit LE Venous Form"
         @le_venous_form = LeVenousForm.find(params[:id])
+        @btnText = "Update"
     end
     
     def update
+        @le_venous_form = LeVenousForm.find(params[:id])
         if @le_venous_form.update_attributes(le_venous_params)
             flash.alert = "LeVenous Form Updated"
             redirect_to @le_venous_form
@@ -40,7 +42,7 @@ class LeVenousFormsController < ApplicationController
     end
     
     def destroy
-        le_venousForm.find(params[:id]).destroy
+        LeVenousForm.find(params[:id]).destroy
         flash.alert = "LE Venous Form Deleted"
         redirect_to current_user
     end

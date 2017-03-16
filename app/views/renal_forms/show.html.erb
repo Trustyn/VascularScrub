@@ -1,0 +1,518 @@
+<table>
+    <thead>
+        <tr>
+            <th>age</th>
+            <th>gender</th>
+            <th>technologist</th>
+            <th>blood_pressure_right</th>
+            <th>blood_pressure_left</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @form = @renal_form.form %>
+            <td><%= @form.age %></td>
+            <td><%= @form.gender.gender %></td>
+            <td><%=  "#{@form.technologist.firstname}"+" "+"#{@form.technologist.lastname}" %></td>  
+            <td><%= @form.bpRight %></td>
+            <td><%= @form.bpLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <br/><br/>
+            <th>Other History</th>
+            <th>Other Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @form.history %></td>
+            <td><%= @form.symptoms %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <br/><br/>
+            <th>hypertension</th>
+            <th>atherosclerosis</th>
+            <th>renalStenosis</th>
+            <th>renalFailure</th>
+            <th>graft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.hypertension %></td>
+            <td><%= @renal_form.atherosclerosis %></td>
+            <td><%= @renal_form.renalStenosis %></td>
+            <td><%= @renal_form.renalFailure %></td>
+            <td><%= @renal_form.graft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>transplant</th>
+            <th>thrombosis</th>
+            <th>malignancy</th>
+            <th>otherHistory</th>
+            <th>arteryRightPSV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.transplant %></td>
+            <td><%= @renal_form.thrombosis %></td>
+            <td><%= @renal_form.malignancy %></td>
+            <td><%= @renal_form.otherHistory %></td>
+            <td><%= @renal_form.arteryRightPSV %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>arteryLeftPSV</th>
+            <th>arteryRightEDV</th>
+            <th>arteryLeftEDV</th>
+            <th>arteryRightRI</th>
+            <th>arteryLeftRI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.arteryLeftPSV %></td>
+            <td><%= @renal_form.arteryRightEDV %></td>
+            <td><%= @renal_form.arteryLeftEDV %></td>
+            <td><%= @renal_form.arteryRightRI %></td>
+            <td><%= @renal_form.arteryLeftRI %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>arteryRightAT</th>
+            <th>arteryLeftAT</th>
+            <th>arteryRightDS</th>
+            <th>arteryLeftDS</th>
+            <th>arteryRightRAR</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.arteryRightAT %></td>
+            <td><%= @renal_form.arteryLeftAT %></td>
+            <td><%= @renal_form.arteryRightDS %></td>
+            <td><%= @renal_form.arteryLeftDS %></td>
+            <td><%= @renal_form.arteryRightRAR %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>arteryLeftRAR</th>
+            <th>aortaRightPSV</th>
+            <th>aortaLeftPSV</th>
+            <th>aortaRightEDV</th>
+            <th>aortaLeftEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.arteryLeftRAR%></td>
+            <td><%= @renal_form.aortaRightPSV %></td>
+            <td><%= @renal_form.aortaLeftPSV %></td>
+            <td><%= @renal_form.aortaRightEDV %></td>
+            <td><%= @renal_form.aortaLeftEDV %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>aortaRightRI</th>
+            <th>aortaLeftRI</th>
+            <th>aortaRightAT</th>
+            <th>aortaLeftAT</th>
+            <th>aortaRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.aortaRightRI %></td>
+            <td><%= @renal_form.aortaLeftRI %></td>
+            <td><%= @renal_form.aortaRightAT %></td>
+            <td><%= @renal_form.aortaLeftAT %></td>
+            <td><%= @renal_form.aortaRightDS %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>aortaLeftDS</th>
+            <th>aortaRightRAR</th>
+            <th>aortaLeftRAR</th>
+            <th>renalAOrginRightPSV</th>
+            <th>renalAOrginLeftPSV</th>
+            <th>renalAOrginRightEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.aortaLeftDS %></td>
+            <td><%= @renal_form.aortaRightRAR %></td>
+            <td><%= @renal_form.aortaLeftRAR %></td>
+            <td><%= @renal_form.renalAOrginRightPSV %></td>
+            <td><%= @renal_form.renalAOrginLeftPSV %></td>
+            <td><%= @renal_form.renalAOrginRightEDV %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>renalAOrginLeftEDV</th>
+            <th>renalAOrginRightRI</th>
+            <th>renalAOrginLeftRI</th>
+            <th>renalAOrginRightAT</th>
+            <th>renalAOrginLeftAT</th>
+            <th>renalAOrginRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalAOrginLeftEDV %></td>
+            <td><%= @renal_form.renalAOrginRightRI %></td>
+            <td><%= @renal_form.renalAOrginLeftRI %></td>
+            <td><%= @renal_form.renalAOrginRightAT %></td>
+            <td><%= @renal_form.renalAOrginLeftAT %></td>
+            <td><%= @renal_form.renalAOrginRightDS %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>renalAOrginLeftDS</th>
+            <th>renalAOrginRightRAR</th>
+            <th>renalAOrginLeftRAR</th>
+            <th>renalAProxRightPSV</th>
+            <th>renalAProxLeftPSV</th>
+            <th>renalAProxRightEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalAOrginLeftDS %></td>
+            <td><%= @renal_form.renalAOrginRightRAR %></td>
+            <td><%= @renal_form.renalAOrginLeftRAR %></td>
+            <td><%= @renal_form.renalAProxRightPSV %></td>
+            <td><%= @renal_form.renalAProxLeftPSV %></td>
+            <td><%= @renal_form.renalAProxRightEDV %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>renalAProxLeftEDV</th>
+            <th>renalAProxRightRI</th>
+            <th>renalAProxLeftRI</th>
+            <th>renalAProxRightAT</th>
+            <th>renalAProxLeftAT</th>
+            <th>renalAProxRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalAProxLeftEDV %></td>
+            <td><%= @renal_form.renalAProxRightRI %></td>
+            <td><%= @renal_form.renalAProxLeftRI %></td>
+            <td><%= @renal_form.renalAProxRightAT %></td>
+            <td><%= @renal_form.renalAProxLeftAT %></td>
+            <td><%= @renal_form.renalAProxRightDS %></td>
+        </tr>
+    </tbody>
+                <thead>
+        <tr>
+            <th>renalAProxLeftDS</th>
+            <th>renalAProxRightRAR</th>
+            <th>renalAProxLeftRAR</th>
+            <th>renalAMidRightPSV</th>
+            <th>renalAMidLeftPSV</th>
+            <th>renalAMidRightEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalAProxLeftDS %></td>
+            <td><%= @renal_form.renalAProxRightRAR %></td>
+            <td><%= @renal_form.renalAProxLeftRAR %></td>
+            <td><%= @renal_form.renalAMidRightPSV %></td>
+            <td><%= @renal_form.renalAMidLeftPSV %></td>
+            <td><%= @renal_form.renalAMidRightEDV %></td>
+        </tr>
+    </tbody>
+ 
+    <thead>
+        <tr>
+            <th>renalAMidLeftEDV</th>
+            <th>renalAMidRightRI</th>
+            <th>renalAMidLeftRI</th>
+            <th>renalAMidRightAT</th>
+            <th>renalAMidLeftAT</th>
+            <th>renalAMidRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalAMidLeftEDV %></td>
+            <td><%= @renal_form.renalAMidRightRI %></td>
+            <td><%= @renal_form.renalAMidLeftRI %></td>
+            <td><%= @renal_form.renalAMidRightAT %></td>
+            <td><%= @renal_form.renalAMidLeftAT %></td>
+            <td><%= @renal_form.renalAMidRightDS %></td>
+        </tr>
+    </tbody>   
+    <thead>
+        <tr>
+            <th>renalAMidLeftDS</th>
+            <th>renalAMidRightRAR</th>
+            <th>renalAMidLeftRAR</th>
+            <th>renalADistRightPSV</th>
+            <th>renalADistLeftPSV</th>
+            <th>renalADistRightEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalAMidLeftDS %></td>
+            <td><%= @renal_form.renalAMidRightRAR %></td>
+            <td><%= @renal_form.renalAMidLeftRAR %></td>
+            <td><%= @renal_form.renalADistRightPSV %></td>
+            <td><%= @renal_form.renalADistLeftPSV %></td>
+            <td><%= @renal_form.renalADistRightEDV %></td>
+        </tr>
+    </tbody> 
+   <thead>
+        <tr>
+            <th>renalADistLeftEDV</th>
+            <th>renalADistRightRI</th>
+            <th>renalADistLeftRI</th>
+            <th>renalADistRightAT</th>
+            <th>renalADistLeftAT</th>
+            <th>renalADistRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalADistLeftEDV %></td>
+            <td><%= @renal_form.renalADistRightRI %></td>
+            <td><%= @renal_form.renalADistLeftRI %></td>
+            <td><%= @renal_form.renalADistRightAT %></td>
+            <td><%= @renal_form.renalADistLeftAT %></td>
+            <td><%= @renal_form.renalADistRightDS %></td>
+        </tr>
+    </tbody>
+   <thead>
+        <tr>
+            <th>renalADistLeftDS</th>
+            <th>renalADistRightRAR</th>
+            <th>renalADistLeftRAR</th>
+            <th>parenchymaRightPSV</th>
+            <th>parenchymaLeftPSV</th>
+            <th>parenchymaRightEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalADistLeftDS %></td>
+            <td><%= @renal_form.renalADistRightRAR %></td>
+            <td><%= @renal_form.renalADistLeftRAR %></td>
+            <td><%= @renal_form.parenchymaRightPSV %></td>
+            <td><%= @renal_form.parenchymaLeftPSV %></td>
+            <td><%= @renal_form.parenchymaRightEDV %></td>
+        </tr>
+    </tbody>
+   <thead>
+        <tr>
+            <th>parenchymaLeftEDV</th>
+            <th>parenchymaRightRI</th>
+            <th>parenchymaLeftRI</th>
+            <th>parenchymaRightAT</th>
+            <th>parenchymaLeftAT</th>
+            <th>parenchymaRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.parenchymaLeftEDV %></td>
+            <td><%= @renal_form.parenchymaRightRI %></td>
+            <td><%= @renal_form.parenchymaLeftRI %></td>
+            <td><%= @renal_form.parenchymaRightAT %></td>
+            <td><%= @renal_form.parenchymaLeftAT %></td>
+            <td><%= @renal_form.parenchymaRightDS %></td>
+        </tr>
+    </tbody> 
+   <thead>
+        <tr>
+            <th>parenchymaLeftDS</th>
+            <th>parenchymaRightRAR</th>
+            <th>parenchymaLeftRAR</th>
+            <th>interlobularRightPSV</th>
+            <th>interlobularLeftPSV</th>
+            <th>interlobularRightEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.parenchymaLeftDS %></td>
+            <td><%= @renal_form.parenchymaRightRAR %></td>
+            <td><%= @renal_form.parenchymaLeftRAR %></td>
+            <td><%= @renal_form.interlobularRightPSV %></td>
+            <td><%= @renal_form.interlobularLeftPSV %></td>
+            <td><%= @renal_form.interlobularRightEDV %></td>
+        </tr>
+    </tbody> 
+   <thead>
+        <tr>
+            <th>interlobularLeftEDV</th>
+            <th>interlobularRightRI</th>
+            <th>interlobularLeftRI</th>
+            <th>interlobularRightAT</th>
+            <th>interlobularLeftAT</th>
+            <th>interlobularRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.interlobularLeftEDV %></td>
+            <td><%= @renal_form.interlobularRightRI %></td>
+            <td><%= @renal_form.interlobularLeftRI %></td>
+            <td><%= @renal_form.interlobularRightAT %></td>
+            <td><%= @renal_form.interlobularLeftAT %></td>
+            <td><%= @renal_form.interlobularRightDS %></td>
+        </tr>
+    </tbody>
+   <thead>
+        <tr>
+            <th>interlobularLeftDS</th>
+            <th>interlobularRightRAR</th>
+            <th>interlobularLeftRAR</th>
+            <th>arcuateRightPSV</th>
+            <th>arcuateLeftPSV</th>
+            <th>arcuateRightEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.interlobularLeftDS %></td>
+            <td><%= @renal_form.interlobularRightRAR %></td>
+            <td><%= @renal_form.interlobularLeftRAR %></td>
+            <td><%= @renal_form.arcuateRightPSV %></td>
+            <td><%= @renal_form.arcuateLeftPSV %></td>
+            <td><%= @renal_form.arcuateRightEDV %></td>
+        </tr>
+    </tbody> 
+   <thead>
+        <tr>
+            <th>arcuateLeftEDV</th>
+            <th>arcuateRightRI</th>
+            <th>arcuateLeftRI</th>
+            <th>arcuateRightAT</th>
+            <th>arcuateLeftAT</th>
+            <th>arcuateRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.arcuateLeftEDV %></td>
+            <td><%= @renal_form.arcuateRightRI %></td>
+            <td><%= @renal_form.arcuateLeftRI %></td>
+            <td><%= @renal_form.arcuateRightAT %></td>
+            <td><%= @renal_form.arcuateLeftAT %></td>
+            <td><%= @renal_form.arcuateRightDS %></td>
+        </tr>
+    </tbody>
+   <thead>
+        <tr>
+            <th>arcuateLeftDS</th>
+            <th>arcuateRightRAR</th>
+            <th>arcuateLeftRAR</th>
+            <th>renalVeinRightPSV</th>
+            <th>renalVeinLeftPSV</th>
+            <th>renalVeinRightEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.arcuateLeftDS %></td>
+            <td><%= @renal_form.arcuateRightRAR %></td>
+            <td><%= @renal_form.arcuateLeftRAR %></td>
+            <td><%= @renal_form.renalVeinRightPSV %></td>
+            <td><%= @renal_form.renalVeinLeftPSV %></td>
+            <td><%= @renal_form.renalVeinRightEDV %></td>
+        </tr>
+    </tbody>
+   <thead>
+        <tr>
+            <th>renalVeinLeftEDV</th>
+            <th>renalVeinRightRI</th>
+            <th>renalVeinLeftRI</th>
+            <th>renalVeinRightAT</th>
+            <th>renalVeinLeftAT</th>
+            <th>renalVeinRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalVeinLeftEDV %></td>
+            <td><%= @renal_form.renalVeinRightRI %></td>
+            <td><%= @renal_form.renalVeinLeftRI %></td>
+            <td><%= @renal_form.renalVeinRightAT %></td>
+            <td><%= @renal_form.renalVeinLeftAT %></td>
+            <td><%= @renal_form.renalVeinRightDS %></td>
+        </tr>
+    </tbody> 
+   <thead>
+        <tr>
+            <th>renalVeinLeftDS</th>
+            <th>renalVeinRightRAR</th>
+            <th>renalVeinLeftRAR</th>
+            <th>renalSizeRightPSV</th>
+            <th>renalSizeLeftPSV</th>
+            <th>renalSizeRightEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalVeinLeftDS %></td>
+            <td><%= @renal_form.renalVeinRightRAR %></td>
+            <td><%= @renal_form.renalVeinLeftRAR %></td>
+            <td><%= @renal_form.renalSizeRightPSV %></td>
+            <td><%= @renal_form.renalSizeLeftPSV %></td>
+            <td><%= @renal_form.renalSizeRightEDV %></td>
+        </tr>
+    </tbody>
+   <thead>
+        <tr>
+            <th>renalSizeLeftEDV</th>
+            <th>renalSizeRightRI</th>
+            <th>renalSizeLeftRI</th>
+            <th>renalSizeRightAT</th>
+            <th>renalSizeLeftAT</th>
+            <th>renalSizeRightDS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalSizeLeftEDV %></td>
+            <td><%= @renal_form.renalSizeRightRI %></td>
+            <td><%= @renal_form.renalSizeLeftRI %></td>
+            <td><%= @renal_form.renalSizeRightAT %></td>
+            <td><%= @renal_form.renalSizeLeftAT %></td>
+            <td><%= @renal_form.renalSizeRightDS %></td>
+        </tr>
+    </tbody>
+   <thead>
+        <tr>
+            <th>renalSizeLeftDS</th>
+            <th>renalSizeRightRAR</th>
+            <th>renalSizeLeftRAR</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @renal_form.renalSizeLeftDS %></td>
+            <td><%= @renal_form.renalSizeRightRAR %></td>
+            <td><%= @renal_form.renalSizeLeftRAR %></td>
+        </tr>
+    </tbody> 
+</table>

@@ -1,0 +1,13 @@
+<h1>User LE Venous Forms</h1>
+<h2><%= link_to 'New LE Venous Form', new_le_venous_form_path %></h2>
+<table>
+    <% @le_venous_forms.each do |le_venous_form| %>
+    <tr>
+        <td><%= link_to le_venous_form.id, :action =>'show', :id => le_venous_form.id %></td>
+        <td><%= link_to 'Edit', edit_le_venous_form_path(le_venous_form) %></td>
+        <td><%= link_to 'Delete', le_venous_form, method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    
+</table>

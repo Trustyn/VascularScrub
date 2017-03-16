@@ -1,13 +1,13 @@
 class UeVenousFormsController < ApplicationController
     
     def new
-        @ue_venous_form = UeVenousForm.new
+        @ue_venous_form = current_user.ue_venous_forms.build
         @ue_venous_form.form = Form.new
-        @ue_venous_form.form.technologist = Technologist.new
+        @btnText = "Create"
     end
     
     def create
-        @ue_venous_form = UeVenousForm.new(ue_venous_params)
+        @ue_venous_form = current_user.ue_venous_forms.build(ue_venous_params)
         if(@ue_venous_form.save)
             flash[:success] = "UE Venous Form Created"
             redirect_to @ue_venous_form
@@ -22,15 +22,17 @@ class UeVenousFormsController < ApplicationController
     
     def index
         @page_title = "All UE Venous Forms"
-        @ue_venous_forms = current_user.ue_venous_forms
+        @ue_venous_forms = UeVenousForm.all
     end
     
     def edit
         @page_title = "Edit UE Venous Form"
         @ue_venous_form = UeVenousForm.find(params[:id])
+        @btnText = "Update"
     end
     
     def update
+        @ue_venous_form = UeVenousForm.find(params[:id])
         if @ue_venous_form.update_attributes(ue_venous_params)
             flash.alert = "UE Venous Form Updated"
             redirect_to @ue_venous_form

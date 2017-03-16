@@ -1,0 +1,213 @@
+<table>
+    <thead>
+        <tr>
+            <th>age</th>
+            <th>gender</th>
+            <th>technologist</th>
+            <th>blood_pressure_right</th>
+            <th>blood_pressure_left</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @form = @le_arterial_form.form %>
+            <td><%= @form.age %></td>
+            <td><%= @form.gender.gender %></td>
+            <td><%=  "#{@form.technologist.firstname}"+" "+"#{@form.technologist.lastname}" %></td>  
+            <td><%= @form.bpRight %></td>
+            <td><%= @form.bpLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <br/><br/>
+            <th>Other History</th>
+            <th>Other Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @form.history %></td>
+            <td><%= @form.symptoms %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <br/><br/>
+            <th>ankleBPRight</th>
+            <th>ankleBPLeft</th>
+            <th>indications</th>
+            <th>prevSurgery</th>
+            <th>vascularDisease</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.ankleBPRight %></td>
+            <td><%= @le_arterial_form.ankleBPLeft %></td>
+            <td><%= @le_arterial_form.indications %></td>
+            <td><%= @le_arterial_form.prevSurgery %></td>
+            <td><%= @le_arterial_form.vascularDisease %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>heartDisease</th>
+            <th>smoking</th>
+            <th>injury</th>
+            <th>medications</th>
+            <th>otherHistory</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.heartDisease %></td>
+            <td><%= @le_arterial_form.smoking %></td>
+            <td><%= @le_arterial_form.injury %></td>
+            <td><%= @le_arterial_form.medications %></td>
+            <td><%= @le_arterial_form.otherHistory %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>claudication</th>
+            <th>restPain</th>
+            <th>ulcerations</th>
+            <th>gangrene</th>
+            <th>otherSymptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.claudication %></td>
+            <td><%= @le_arterial_form.restPain %></td>
+            <td><%= @le_arterial_form.ulcerations %></td>
+            <td><%= @le_arterial_form.gangrene %></td>
+            <td><%= @le_arterial_form.otherSymptoms %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>abiRight</th>
+            <th>abiLeft</th>
+            <th>commFemoralProxRight</th>
+            <th>commFemoralProxLeft</th>
+            <th>commFemoralDistRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.abiRight %></td>
+            <td><%= @le_arterial_form.abiLeft %></td>
+            <td><%= @le_arterial_form.commFemoralProxRight %></td>
+            <td><%= @le_arterial_form.commFemoralProxLeft %></td>
+            <td><%= @le_arterial_form.commFemoralDistRight %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>commFemoralDistLeft</th>
+            <th>supFemoralProxRight</th>
+            <th>supFemoralProxLeft</th>
+            <th>supFemoralDistRight</th>
+            <th>supFemoralDistLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.commFemoralDistLeft%></td>
+            <td><%= @le_arterial_form.supFemoralProxRight %></td>
+            <td><%= @le_arterial_form.supFemoralProxLeft %></td>
+            <td><%= @le_arterial_form.supFemoralDistRight %></td>
+            <td><%= @le_arterial_form.supFemoralDistLeft %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>deepFemoralProxRight</th>
+            <th>deepFemoralProxLeft</th>
+            <th>deepFemoralDistRight</th>
+            <th>deepFemoralDistLeft</th>
+            <th>poplitealProxRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.deepFemoralProxRight %></td>
+            <td><%= @le_arterial_form.deepFemoralProxLeft %></td>
+            <td><%= @le_arterial_form.deepFemoralDistRight %></td>
+            <td><%= @le_arterial_form.deepFemoralDistLeft %></td>
+            <td><%= @le_arterial_form.poplitealProxRight %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>poplitealProxLeft</th>
+            <th>poplitealDistRight</th>
+            <th>poplitealDistLeft</th>
+            <th>antTibialProxRight</th>
+            <th>antTibialProxLeft</th>
+            <th>antTibialDistRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.poplitealProxLeft %></td>
+            <td><%= @le_arterial_form.poplitealDistRight %></td>
+            <td><%= @le_arterial_form.poplitealDistLeft %></td>
+            <td><%= @le_arterial_form.antTibialProxRight %></td>
+            <td><%= @le_arterial_form.antTibialProxLeft %></td>
+            <td><%= @le_arterial_form.antTibialDistRight %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>antTibialDistLeft</th>
+            <th>postTibialProxRight</th>
+            <th>postTibialProxLeft</th>
+            <th>postTibialDistRight</th>
+            <th>postTibialDistLeft</th>
+            <th>peronealProxRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.antTibialDistLeft %></td>
+            <td><%= @le_arterial_form.postTibialProxRight %></td>
+            <td><%= @le_arterial_form.postTibialProxLeft %></td>
+            <td><%= @le_arterial_form.postTibialDistRight %></td>
+            <td><%= @le_arterial_form.postTibialDistLeft %></td>
+            <td><%= @le_arterial_form.peronealProxRight %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>peronealProxLeft</th>
+            <th>peronealDistRight</th>
+            <th>peronealDistLeft</th>
+            <th>otherProxRight</th>
+            <th>otherProxLeft</th>
+            <th>otherDistRightv</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.peronealProxLeft %></td>
+            <td><%= @le_arterial_form.peronealDistRight %></td>
+            <td><%= @le_arterial_form.peronealDistLeft %></td>
+            <td><%= @le_arterial_form.otherProxRight %></td>
+            <td><%= @le_arterial_form.otherProxLeft %></td>
+            <td><%= @le_arterial_form.otherDistRight %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>otherDistLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_arterial_form.otherDistLeft %></td>
+        </tr>
+    </tbody>
+</table>

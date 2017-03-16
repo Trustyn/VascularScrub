@@ -1,22 +1,18 @@
 <% if logged_in? %>
 
-    <!-- Dropdown menu for Forms -->
+  <!-- Carotid Form Functions -->
   <li class="dropdown">
     <a href="#" class="dropdown-toggle menu-tab" data-toggle="dropdown">
     Forms <b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><%= link_to "Carotid Exam", new_carotid_form_path %></li>
-      <li><%= link_to "UE Arterial Exam", new_ue_arterial_form_path %></li>
-      <li><%= link_to "UE Venous Exam", new_ue_venous_form_path %></li>      
-      <li><%= link_to "Hepatic Exam", new_hepatic_form_path %></li>
-      <li><%= link_to "Mesenteric Exam", new_mesenteric_form_path %></li>
-      <li><%= link_to "Renal Exam", new_renal_form_path %></li>      
-      <li><%= link_to "LE Arterial Exam", new_le_arterial_form_path %></li>
-      <li><%= link_to "LE Venous Exam", new_le_venous_form_path %></li>      
-      <li class= "divider"></li>
-      <li><%= link_to "Edit Form", '#' %></li>
-      <li><%= link_to "Remove Form", '#' %></li>
-  
+      <li><%= link_to "Carotid Exam", 'carotid_forms#index' %></li>
+      <li><%= link_to "UE Arterial Exam", 'ue_arterial_forms#index' %></li>
+      <li><%= link_to "UE Venous Exam", 'ue_venous_forms#index' %></li>      
+      <li><%= link_to "Hepatic Exam", 'hepatic_forms#index' %></li>
+      <li><%= link_to "Mesenteric Exam", 'mesenteric_forms#index' %></li>
+      <li><%= link_to "Renal Exam", 'renal_forms#index' %></li>      
+      <li><%= link_to "LE Arterial Exam", 'le_arterial_forms#index' %></li>
+      <li><%= link_to "LE Venous Exam", 'le_venous_forms#index' %></li>
     </ul>
   </li>
   
@@ -25,8 +21,7 @@
     <a href="#" class="dropdown-toggle menu-tab" data-toggle="dropdown">
     Technologists <b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><%= link_to "Add Tech", '#' %></li>
-      <li><%= link_to "Remove Tech", '#' %></li>
+      <li><%= link_to "Tech List", 'technologists#index' %></li>
     </ul>
   </li>
   
@@ -41,18 +36,6 @@
     </ul>
   </li>
   
-  <!-- Dropdown menu for Analytics -->
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle menu-tab" data-toggle="dropdown">
-    Analysis <b class="caret"></b></a>
-    <ul class="dropdown-menu">
-      <li><%= link_to "Premade Analytics 1", '#' %></li>
-      <li><%= link_to "Premade Analytics 2", '#' %></li>
-      <li><%= link_to "Premade Analytics 3", '#' %></li>
-      <li class= "divider"></li>
-      <li><%= link_to "Create Custom Analysis", '#' %></li>
-    </ul>
-  </li>
   
   <!-- Users only have the ability to log out currently -->
   <li><%= link_to "Log Out", logout_path, method: :delete %></li>

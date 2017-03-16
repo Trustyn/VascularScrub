@@ -1,0 +1,173 @@
+<table>
+    <thead>
+        <tr>
+            <th>age</th>
+            <th>gender</th>
+            <th>technologist</th>
+            <th>blood_pressure_right</th>
+            <th>blood_pressure_left</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @form = @ue_arterial_form.form %>
+            <td><%= @form.age %></td>
+            <td><%= @form.gender.gender %></td>
+            <td><%=  "#{@form.technologist.firstname}"+" "+"#{@form.technologist.lastname}" %></td>  
+            <td><%= @form.bpRight %></td>
+            <td><%= @form.bpLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <br/><br/>
+            <th>Other History</th>
+            <th>Other Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @form.history %></td>
+            <td><%= @form.symptoms %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <br/><br/>
+            <th>vasDisease</th>
+            <th>smoking</th>
+            <th>heartDisease</th>
+            <th>meds</th>
+            <th>injury</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_arterial_form.vasDisease %></td>
+            <td><%= @ue_arterial_form.smoking %></td>
+            <td><%= @ue_arterial_form.heartDisease %></td>
+            <td><%= @ue_arterial_form.meds %></td>
+            <td><%= @ue_arterial_form.injury %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>prevSurgery</th>
+            <th>diabetes</th>
+            <th>otherHistory</th>
+            <th>claudication</th>
+            <th>numbness</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_arterial_form.prevSurgery %></td>
+            <td><%= @ue_arterial_form.diabetes %></td>
+            <td><%= @ue_arterial_form.otherHistory %></td>
+            <td><%= @ue_arterial_form.claudication %></td>
+            <td><%= @ue_arterial_form.numbness %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>pain</th>
+            <th>colorChange</th>
+            <th>otherSymptoms</th>
+            <th>subclavianPSVRight</th>
+            <th>subclavianPSVLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_arterial_form.pain %></td>
+            <td><%= @ue_arterial_form.colorChange %></td>
+            <td><%= @ue_arterial_form.otherSymptoms %></td>
+            <td><%= @ue_arterial_form.subclavianPSVRight %></td>
+            <td><%= @ue_arterial_form.subclavianPSVLeft %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>subclavianEDVRight</th>
+            <th>subclavianEDVLeft</th>
+            <th>axillaryPSVRight</th>
+            <th>axillaryPSVLeft</th>
+            <th>axillaryEDVRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_arterial_form.subclavianEDVRight %></td>
+            <td><%= @ue_arterial_form.subclavianEDVLeft %></td>
+            <td><%= @ue_arterial_form.axillaryPSVRight %></td>
+            <td><%= @ue_arterial_form.axillaryPSVLeft %></td>
+            <td><%= @ue_arterial_form.axillaryEDVRight %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>axillaryEDVLeft</th>
+            <th>brachialPSVRight</th>
+            <th>brachialPSVLeft</th>
+            <th>brachialEDVRight</th>
+            <th>brachialEDVLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_arterial_form.axillaryEDVLeft%></td>
+            <td><%= @ue_arterial_form.brachialPSVRight %></td>
+            <td><%= @ue_arterial_form.brachialPSVLeft %></td>
+            <td><%= @ue_arterial_form.brachialEDVRight %></td>
+            <td><%= @ue_arterial_form.brachialEDVLeft %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>radialPSVRight</th>
+            <th>radialPSVLeft</th>
+            <th>radialEDVRight</th>
+            <th>radialEDVLeft</th>
+            <th>ulnarPSVRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_arterial_form.radialPSVRight %></td>
+            <td><%= @ue_arterial_form.radialPSVLeft %></td>
+            <td><%= @ue_arterial_form.radialEDVRight %></td>
+            <td><%= @ue_arterial_form.radialEDVLeft %></td>
+            <td><%= @ue_arterial_form.ulnarPSVRight %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>ulnarPSVLeft</th>
+            <th>ulnarEDVRight</th>
+            <th>ulnarEDVLeft</th>
+            <th>palmarPSVRight</th>
+            <th>palmarPSVLeft</th>
+            <th>palmarEDVRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_arterial_form.ulnarPSVLeft %></td>
+            <td><%= @ue_arterial_form.ulnarEDVRight %></td>
+            <td><%= @ue_arterial_form.ulnarEDVLeft %></td>
+            <td><%= @ue_arterial_form.palmarPSVRight %></td>
+            <td><%= @ue_arterial_form.palmarPSVLeft %></td>
+            <td><%= @ue_arterial_form.palmarEDVRight %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>palmarEDVLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_arterial_form.palmarEDVLeft %></td>
+        </tr>
+    </tbody>
+</table>

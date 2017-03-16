@@ -1,0 +1,241 @@
+<table>
+    <thead>
+        <tr>
+            <th>age</th>
+            <th>gender</th>
+            <th>technologist</th>
+            <th>blood_pressure_right</th>
+            <th>blood_pressure_left</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @form = @mesenteric_form.form %>
+            <td><%= @form.age %></td>
+            <td><%= @form.gender.gender %></td>
+            <td><%=  "#{@form.technologist.firstname}"+" "+"#{@form.technologist.lastname}" %></td>  
+            <td><%= @form.bpRight %></td>
+            <td><%= @form.bpLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <br/><br/>
+            <th>Other History</th>
+            <th>Other Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @form.history %></td>
+            <td><%= @form.symptoms %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <br/><br/>
+            <th>abdominPain</th>
+            <th>weightLoss</th>
+            <th>chronicDiarrhea</th>
+            <th>bowellInfarction</th>
+            <th>otherHistory</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.abdominPain %></td>
+            <td><%= @mesenteric_form.weightLoss %></td>
+            <td><%= @mesenteric_form.chronicDiarrhea %></td>
+            <td><%= @mesenteric_form.bowellInfarction %></td>
+            <td><%= @mesenteric_form.otherHistory %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>aortaFastPSV</th>
+            <th>aortaPostPSV</th>
+            <th>aortaFastEDV</th>
+            <th>aortaPostEDV</th>
+            <th>aortaFastRI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.aortaFastPSV %></td>
+            <td><%= @mesenteric_form.aortaPostPSV %></td>
+            <td><%= @mesenteric_form.aortaFastEDV %></td>
+            <td><%= @mesenteric_form.aortaPostEDV %></td>
+            <td><%= @mesenteric_form.aortaFastRI %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>aortaPostRI</th>
+            <th>celiacOriginFastPSV</th>
+            <th>celiacOriginPostPSV</th>
+            <th>celiacOriginFastEDV</th>
+            <th>celiacOriginPostEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.aortaPostRI %></td>
+            <td><%= @mesenteric_form.celiacOriginFastPSV %></td>
+            <td><%= @mesenteric_form.celiacOriginPostPSV %></td>
+            <td><%= @mesenteric_form.celiacOriginFastEDV %></td>
+            <td><%= @mesenteric_form.celiacOriginPostEDV %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>celiacOriginFastRI</th>
+            <th>celiacOriginPostRI</th>
+            <th>celiacMidFastPSV</th>
+            <th>celiacMidPostPSV</th>
+            <th>celiacMidFastEDV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.celiacOriginFastRI %></td>
+            <td><%= @mesenteric_form.celiacOriginPostRI %></td>
+            <td><%= @mesenteric_form.celiacMidFastPSV %></td>
+            <td><%= @mesenteric_form.celiacMidPostPSV %></td>
+            <td><%= @mesenteric_form.celiacMidFastEDV %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>celiacMidPostEDV</th>
+            <th>celiacMidFastRI</th>
+            <th>celiacMidPostRI</th>
+            <th>smaOriginFastPSV</th>
+            <th>smaOriginPostPSV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.celiacMidPostEDV%></td>
+            <td><%= @mesenteric_form.celiacMidFastRI %></td>
+            <td><%= @mesenteric_form.celiacMidPostRI %></td>
+            <td><%= @mesenteric_form.smaOriginFastPSV %></td>
+            <td><%= @mesenteric_form.smaOriginPostPSV %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>smaOriginFastEDV</th>
+            <th>smaOriginPostEDV</th>
+            <th>smaOriginFastRI</th>
+            <th>smaOriginPostRI</th>
+            <th>smaMidFastPSV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.smaOriginFastEDV %></td>
+            <td><%= @mesenteric_form.smaOriginPostEDV %></td>
+            <td><%= @mesenteric_form.smaOriginFastRI %></td>
+            <td><%= @mesenteric_form.smaOriginPostRI %></td>
+            <td><%= @mesenteric_form.smaMidFastPSV %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>smaMidPostPSV</th>
+            <th>smaMidFastEDV</th>
+            <th>smaMidPostEDV</th>
+            <th>smaMidFastRI</th>
+            <th>smaMidPostRI</th>
+            <th>smaDistalFastPSV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.smaMidPostPSV %></td>
+            <td><%= @mesenteric_form.smaMidFastEDV %></td>
+            <td><%= @mesenteric_form.smaMidPostEDV %></td>
+            <td><%= @mesenteric_form.smaMidFastRI %></td>
+            <td><%= @mesenteric_form.smaMidPostRI %></td>
+            <td><%= @mesenteric_form.smaDistalFastPSV %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>smaDistalPostPSV</th>
+            <th>smaDistalFastEDV</th>
+            <th>smaDistalPostEDV</th>
+            <th>smaDistalFastRI</th>
+            <th>smaDistalPostRI</th>
+            <th>hepaticFastPSV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.smaDistalPostPSV %></td>
+            <td><%= @mesenteric_form.smaDistalFastEDV %></td>
+            <td><%= @mesenteric_form.smaDistalPostEDV %></td>
+            <td><%= @mesenteric_form.smaDistalFastRI %></td>
+            <td><%= @mesenteric_form.smaDistalPostRI %></td>
+            <td><%= @mesenteric_form.hepaticFastPSV %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>hepaticPostPSV</th>
+            <th>hepaticFastEDV</th>
+            <th>hepaticPostEDV</th>
+            <th>hepaticFastRI</th>
+            <th>hepaticPostRI</th>
+            <th>splenicFastPSV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.hepaticPostPSV %></td>
+            <td><%= @mesenteric_form.hepaticFastEDV %></td>
+            <td><%= @mesenteric_form.hepaticPostEDV %></td>
+            <td><%= @mesenteric_form.hepaticFastRI %></td>
+            <td><%= @mesenteric_form.hepaticPostRI %></td>
+            <td><%= @mesenteric_form.splenicFastPSV %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>splenicPostPSV</th>
+            <th>splenicFastEDV</th>
+            <th>splenicPostEDV</th>
+            <th>splenicFastRI</th>
+            <th>splenicPostRI</th>
+            <th>imaFastPSV</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.splenicPostPSV %></td>
+            <td><%= @mesenteric_form.splenicFastEDV %></td>
+            <td><%= @mesenteric_form.splenicPostEDV %></td>
+            <td><%= @mesenteric_form.splenicFastRI %></td>
+            <td><%= @mesenteric_form.splenicPostRI %></td>
+            <td><%= @mesenteric_form.imaFastPSV %></td>
+        </tr>
+    </tbody>
+                <thead>
+        <tr>
+            <th>imaPostPSV</th>
+            <th>imaFastEDV</th>
+            <th>imaPostEDV</th>
+            <th>imaFastRI</th>
+            <th>imaPostRI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @mesenteric_form.imaPostPSV %></td>
+            <td><%= @mesenteric_form.imaFastEDV %></td>
+            <td><%= @mesenteric_form.imaPostEDV %></td>
+            <td><%= @mesenteric_form.imaFastRI %></td>
+            <td><%= @mesenteric_form.imaPostRI %></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,14 +1,14 @@
 class HepaticFormsController < ApplicationController
 def new
-        @hepatic_form = HepaticForm.new
+        @hepatic_form = current_user.hepatic_forms.build
         @hepatic_form.form = Form.new
-        @hepatic_form.form.technologist = Technologist.new
+        @btnText = "Create"
     end
     
     def create
-        @hepatic_form = HepaticForm.new(hepatic_params)
+        @hepatic_form = current_user.hepatic_forms.build(hepatic_params)
         if(@hepatic_form.save)
-            flash[:success] = "Hepatic Form Created Succesfully"
+            flash[:success] = "Hepatic Form Created"
             redirect_to @hepatic_form
         else
             render 'new'
@@ -21,15 +21,17 @@ def new
     
     def index
         @page_title = "All hepatic Forms"
-        @hepatic_forms = current_user.hepatic_forms
+        @hepatic_forms = HepaticForm.all
     end
     
     def edit
         @page_title = "Edit hepatic Form"
         @hepatic_form = HepaticForm.find(params[:id])
+        @btnText = "Update"
     end
     
     def update
+        @hepatic_form = HepaticForm.find(params[:id])
         if @hepatic_form.update_attributes(hepatic_params)
             flash.alert = "Hepatic Form Updated"
             redirect_to @hepatic_form

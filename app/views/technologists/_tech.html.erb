@@ -1,0 +1,12 @@
+<%= form_for @technologist do |f| %>
+    
+    <%= f.label "First Name" %>
+    <%= f.text_field :firstname %> <br/>
+    <%= f.label "Last Name" %>
+    <%= f.text_field :lastname %> <br/>
+
+    <!--Creates Exam (Save's)-->
+    
+    <%= f.submit "#{@btnText}", class: "btn btn-main" %>
+    
+<% end %>

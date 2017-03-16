@@ -1,4 +1,6 @@
 class UeArterialForm < ActiveRecord::Base
     belongs_to :form
-    accepts_nested_attributes_for :form
+    belongs_to :bruit
+    accepts_nested_attributes_for :form, allow_destroy: true
+    accepts_nested_attributes_for :bruit
 end

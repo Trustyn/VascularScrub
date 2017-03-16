@@ -1,16 +1,16 @@
 class TechnologistsController < ApplicationController
      
-  
   def new
-    @technologist = Technologist.new
+    @technologist = current_user.technologists.build
     @technologist.form.build
+    @btnText = "Add"
   end
   
   
   def create
-    @technologist = Technologist.new(technologist_params)
+    @technologist = current_user.technologists.build(technologist_params)
     if @technologist.save
-      flash.notice = "Technologist Created Succesfully"
+      flash.notice = "Technologist Added"
       redirect_to @technologist
     else
       render 'new'
@@ -19,26 +19,28 @@ class TechnologistsController < ApplicationController
   
   
   def show
-    @technologist = technologist.find(params[:id])
+    @technologist = Technologist.find(params[:id])
   end
   
   
   def index
     @page_title = "All technologists"
-    @technologists = current_user.technologists
+    @technologists = Technologist.all
   end
   
  
   def edit
     @page_title = "Edit Technologist"
     @technologist = Technologist.find(params[:id])
+    @btnText = "Update"
     
   end
   
   
   def update
+    @technologist = Technologist.find(params[:id])
     if @technologist.update_attributes(technologist_params)
-      flash.alert = "Technologist updated"
+      flash.alert = "Technologist Updated"
       redirect_to @technologist
     else
       render 'edit'
@@ -59,7 +61,7 @@ private
   
   def technologist_params
     params.require(:technologist).permit(:firstname,
-                                    :lastname)
+                                         :lastname)
   end
   
   

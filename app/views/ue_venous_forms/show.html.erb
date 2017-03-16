@@ -1,0 +1,213 @@
+<table>
+    <thead>
+        <tr>
+            <th>age</th>
+            <th>gender</th>
+            <th>technologist</th>
+            <th>blood_pressure_right</th>
+            <th>blood_pressure_left</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @form = @ue_venous_form.form %>
+            <td><%= @form.age %></td>
+            <td><%= @form.gender.gender %></td>
+            <td><%=  "#{@form.technologist.firstname}"+" "+"#{@form.technologist.lastname}" %></td>  
+            <td><%= @form.bpRight %></td>
+            <td><%= @form.bpLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <br/><br/>
+            <th>Other History</th>
+            <th>Other Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @form.history %></td>
+            <td><%= @form.symptoms %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <br/><br/>
+            <th>recentEvasiveProc</th>
+            <th>recentAVFistula</th>
+            <th>admittingDisease</th>
+            <th>surgery</th>
+            <th>otherSurgery</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.recentEvasiveProc %></td>
+            <td><%= @ue_venous_form.recentAVFistula %></td>
+            <td><%= @ue_venous_form.admittingDisease %></td>
+            <td><%= @ue_venous_form.surgery %></td>
+            <td><%= @ue_venous_form.otherSurgery %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>diabetes</th>
+            <th>myocardialInf</th>
+            <th>conHeartFailure</th>
+            <th>otherHistory</th>
+            <th>pain</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.diabetes %></td>
+            <td><%= @ue_venous_form.myocardialInf %></td>
+            <td><%= @ue_venous_form.conHeartFailure %></td>
+            <td><%= @ue_venous_form.otherHistory %></td>
+            <td><%= @ue_venous_form.pain %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>numbness</th>
+            <th>colorChange</th>
+            <th>otherSymptoms</th>
+            <th>subclavianWaveformRight</th>
+            <th>subclavianCompressionRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.numbness %></td>
+            <td><%= @ue_venous_form.colorChange %></td>
+            <td><%= @ue_venous_form.otherSymptoms %></td>
+            <td><%= @ue_venous_form.subclavianWaveformRight %></td>
+            <td><%= @ue_venous_form.subclavianCompressionRight %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>subclavianWaveformLeft</th>
+            <th>subclavianCompressionLeft</th>
+            <th>axillaryWaveformRight</th>
+            <th>axillaryCompressionRight</th>
+            <th>axillaryWaveformLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.subclavianWaveformLeft %></td>
+            <td><%= @ue_venous_form.subclavianCompressionLeft %></td>
+            <td><%= @ue_venous_form.axillaryWaveformRight %></td>
+            <td><%= @ue_venous_form.axillaryCompressionRight %></td>
+            <td><%= @ue_venous_form.axillaryWaveformLeft %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>axillaryCompressionLeft</th>
+            <th>brachialWaveformRight</th>
+            <th>brachialCompressionRight</th>
+            <th>brachialWaveformLeft</th>
+            <th>brachialCompressionLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.axillaryCompressionLeft%></td>
+            <td><%= @ue_venous_form.brachialWaveformRight %></td>
+            <td><%= @ue_venous_form.brachialCompressionRight %></td>
+            <td><%= @ue_venous_form.brachialWaveformLeft %></td>
+            <td><%= @ue_venous_form.brachialCompressionLeft %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>radialWaveformRight</th>
+            <th>radialCompressionRight</th>
+            <th>radialWaveformLeft</th>
+            <th>radialCompressionLeft</th>
+            <th>ulnarWaveformRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.radialWaveformRight %></td>
+            <td><%= @ue_venous_form.radialCompressionRight %></td>
+            <td><%= @ue_venous_form.radialWaveformLeft %></td>
+            <td><%= @ue_venous_form.radialCompressionLeft %></td>
+            <td><%= @ue_venous_form.ulnarWaveformRight %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>ulnarCompressionRight</th>
+            <th>ulnarWaveformLeft</th>
+            <th>ulnarCompressionLeft</th>
+            <th>basilicWaveformRight</th>
+            <th>basilicCompressionRight</th>
+            <th>basilicWaveformLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.ulnarCompressionRight %></td>
+            <td><%= @ue_venous_form.ulnarWaveformLeft %></td>
+            <td><%= @ue_venous_form.ulnarCompressionLeft %></td>
+            <td><%= @ue_venous_form.basilicWaveformRight %></td>
+            <td><%= @ue_venous_form.basilicCompressionRight %></td>
+            <td><%= @ue_venous_form.basilicWaveformLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>basilicCompressionLeft</th>
+            <th>cephalicWaveformRight</th>
+            <th>cephalicCompressionRight</th>
+            <th>cephalicWaveformLeft</th>
+            <th>cephalicCompressionLeft</th>
+            <th>medCubitalWaveformRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.basilicCompressionLeft %></td>
+            <td><%= @ue_venous_form.cephalicWaveformRight %></td>
+            <td><%= @ue_venous_form.cephalicCompressionRight %></td>
+            <td><%= @ue_venous_form.cephalicWaveformLeft %></td>
+            <td><%= @ue_venous_form.cephalicCompressionLeft %></td>
+            <td><%= @ue_venous_form.medCubitalWaveformRight %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>medCubitalCompressionRight</th>
+            <th>medCubitalWaveformLeft</th>
+            <th>medCubitalCompressionLeft</th>
+            <th>intJugularWaveformRight</th>
+            <th>intJugularCompressionRight</th>
+            <th>intJugularWaveformLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.medCubitalCompressionRight %></td>
+            <td><%= @ue_venous_form.medCubitalWaveformLeft %></td>
+            <td><%= @ue_venous_form.medCubitalCompressionLeft %></td>
+            <td><%= @ue_venous_form.intJugularWaveformRight %></td>
+            <td><%= @ue_venous_form.intJugularCompressionRight %></td>
+            <td><%= @ue_venous_form.intJugularWaveformLeft %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>intJugularCompressionLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @ue_venous_form.intJugularCompressionLeft %></td>
+        </tr>
+    </tbody>
+</table>

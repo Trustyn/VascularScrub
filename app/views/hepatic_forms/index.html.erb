@@ -1,0 +1,13 @@
+<h1>User Hepatic Forms</h1>
+<h2><%= link_to 'New Hepatic Form', new_Hepatic_form_path %></h2>
+<table>
+    <% @hepatic_forms.each do |hepatic_form| %>
+    <tr>
+        <td><%= link_to hepatic_form.id, :action =>'show', :id => hepatic_form.id %></td>
+        <td><%= link_to 'Edit', edit_Hepatic_form_path(hepatic_form) %></td>
+        <td><%= link_to 'Delete', hepatic_form, method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    
+</table>

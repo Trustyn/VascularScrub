@@ -1,0 +1,13 @@
+<h1>User LE Arterial Forms</h1>
+<h2><%= link_to 'New LE Arterial Form', new_le_arterial_form_path %></h2>
+<table>
+    <% @le_arterial_forms.each do |le_arterial_form| %>
+    <tr>
+        <td><%= link_to le_arterial_form.id, :action =>'show', :id => le_arterial_form.id %></td>
+        <td><%= link_to 'Edit', edit_le_arterial_form_path(le_arterial_form) %></td>
+        <td><%= link_to 'Delete', le_arterial_form, method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    
+</table>

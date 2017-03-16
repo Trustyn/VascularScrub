@@ -1,0 +1,125 @@
+<table>
+    <thead>
+        <tr>
+            <th>age</th>
+            <th>gender</th>
+            <th>technologist</th>
+            <th>blood_pressure_right</th>
+            <th>blood_pressure_left</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @form = @le_venous_form.form %>
+            <td><%= @form.age %></td>
+            <td><%= @form.gender.gender %></td>
+            <td><%=  "#{@form.technologist.firstname}"+" "+"#{@form.technologist.lastname}" %></td>  
+            <td><%= @form.bpRight %></td>
+            <td><%= @form.bpLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <br/><br/>
+            <th>Other History</th>
+            <th>Other Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @form.history %></td>
+            <td><%= @form.symptoms %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <br/><br/>
+            <th>admittingDX</th>
+            <th>pulEmb</th>
+            <th>dvt</th>
+            <th>otherSurgery</th>
+            <th>medications</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_venous_form.admittingDX %></td>
+            <td><%= @le_venous_form.pulEmb %></td>
+            <td><%= @le_venous_form.dvt %></td>
+            <td><%= @le_venous_form.otherSurgery %></td>
+            <td><%= @le_venous_form.medications %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>commFemoralRight</th>
+            <th>commFemoralLeft</th>
+            <th>commFemoralAcuteRight</th>
+            <th>commFemoralAcuteLeft</th>
+            <th>supFemoralRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_venous_form.commFemoralRight %></td>
+            <td><%= @le_venous_form.commFemoralLeft %></td>
+            <td><%= @le_venous_form.commFemoralAcuteRight %></td>
+            <td><%= @le_venous_form.commFemoralAcuteLeft %></td>
+            <td><%= @le_venous_form.supFemoralRight %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>supFemoralLeft</th>
+            <th>supFemoralAcuteRight</th>
+            <th>supFemoralAcuteLeft</th>
+            <th>poplitealRight</th>
+            <th>poplitealLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_venous_form.supFemoralLeft %></td>
+            <td><%= @le_venous_form.supFemoralAcuteRight %></td>
+            <td><%= @le_venous_form.supFemoralAcuteLeft %></td>
+            <td><%= @le_venous_form.poplitealRight %></td>
+            <td><%= @le_venous_form.poplitealLeft %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>poplitealAcuteRight</th>
+            <th>poplitealAcuteLeft</th>
+            <th>postTibialRight</th>
+            <th>postTibialLeft</th>
+            <th>postTibialAcuteRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_venous_form.poplitealAcuteRight %></td>
+            <td><%= @le_venous_form.poplitealAcuteLeft %></td>
+            <td><%= @le_venous_form.postTibialRight %></td>
+            <td><%= @le_venous_form.postTibialLeft %></td>
+            <td><%= @le_venous_form.postTibialAcuteRight %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>postTibialAcuteLeft</th>
+            <th>peronealRight</th>
+            <th>peronealLeft</th>
+            <th>peronealAcuteRight</th>
+            <th>peronealAcuteLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @le_venous_form.postTibialAcuteLeft%></td>
+            <td><%= @le_venous_form.peronealRight %></td>
+            <td><%= @le_venous_form.peronealLeft %></td>
+            <td><%= @le_venous_form.peronealAcuteRight %></td>
+            <td><%= @le_venous_form.peronealAcuteLeft %></td>
+        </tr>
+    </tbody>
+</table>

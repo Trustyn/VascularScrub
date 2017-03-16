@@ -2,6 +2,7 @@ class CreateRenalForms < ActiveRecord::Migration
   def change
     create_table :renal_forms do |t|
       t.references :form, index: true, foreign_key: true
+      t.references :bruit, index: true, foreign_key: true
       t.boolean :hypertension
       t.boolean :atherosclerosis
       t.boolean :renalStenosis

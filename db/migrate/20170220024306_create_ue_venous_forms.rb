@@ -2,6 +2,7 @@ class CreateUeVenousForms < ActiveRecord::Migration
   def change
     create_table :ue_venous_forms do |t|
       t.references :form, index: true, foreign_key: true
+      t.references :bruit, index: true, foreign_key: true
       t.boolean :recentEvasiveProc
       t.boolean :recentAVFistula
       t.string :admittingDisease

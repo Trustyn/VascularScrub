@@ -1,15 +1,15 @@
 class MesentericFormsController < ApplicationController
     
     def new
-        @mesenteric_form = MesentericForm.new
+        @mesenteric_form = current_user.mesenteric_forms.build
         @mesenteric_form.form = Form.new
-        @mesenteric_form.form.technologist = Technologist.new
+        @btnText = "Create"
     end
     
     def create
-        @mesenteric_form = MesentericForm.new(mesenteric_params)
+        @mesenteric_form = current_user.mesenteric_forms.build(mesenteric_params)
         if(@mesenteric_form.save)
-            flash[:success] = "Mesenteric Form Created Succesfully"
+            flash[:success] = "Mesenteric Form Created"
             redirect_to @mesenteric_form
         else
             render 'new'
@@ -22,15 +22,17 @@ class MesentericFormsController < ApplicationController
     
     def index
         @page_title = "All Mesenteric Forms"
-        @mesenteric_forms = current_user.mesenteric_forms
+        @mesenteric_forms =MesentericForm.all
     end
     
     def edit
         @page_title = "Edit Mesenteric Form"
         @mesenteric_form = MesentericForm.find(params[:id])
+        @btnText = "Update"
     end
     
     def update
+        @mesenteric_form = MesentericForm.find(params[:id])
         if @mesenteric_form.update_attributes(mesenteric_params)
             flash.alert = "Mesenteric Form Updated"
             redirect_to @mesenteric_form

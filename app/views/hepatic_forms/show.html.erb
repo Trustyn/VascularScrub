@@ -1,0 +1,253 @@
+<table>
+    <thead>
+        <tr>
+            <th>age</th>
+            <th>gender</th>
+            <th>technologist</th>
+            <th>blood_pressure_right</th>
+            <th>blood_pressure_left</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @form = @hepatic_form.form %>
+            <td><%= @form.age %></td>
+            <td><%= @form.gender.gender %></td>
+            <td><%=  "#{@form.technologist.firstname}"+" "+"#{@form.technologist.lastname}" %></td>  
+            <td><%= @form.bpRight %></td>
+            <td><%= @form.bpLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <br/><br/>
+            <th>Other History</th>
+            <th>Other Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @form.history %></td>
+            <td><%= @form.symptoms %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <br/><br/>
+            <th>organEnlarge</th>
+            <th>portalHyperTension</th>
+            <th>cirrhosis</th>
+            <th>ascitites</th>
+            <th>varices</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.organEnlarge %></td>
+            <td><%= @hepatic_form.portalHyperTension %></td>
+            <td><%= @hepatic_form.cirrhosis %></td>
+            <td><%= @hepatic_form.ascitites %></td>
+            <td><%= @hepatic_form.varices %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>shunt</th>
+            <th>transplant</th>
+            <th>labResults</th>
+            <th>otherHistory</th>
+            <th>splenicSize</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.shunt %></td>
+            <td><%= @hepatic_form.transplant %></td>
+            <td><%= @hepatic_form.labResults %></td>
+            <td><%= @hepatic_form.otherHistory %></td>
+            <td><%= @hepatic_form.splenicSize %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>splenicThrombus</th>
+            <th>splenicVelocity</th>
+            <th>splenicFlowDir</th>
+            <th>smvSize</th>
+            <th>smvThrombus</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.splenicThrombus %></td>
+            <td><%= @hepatic_form.splenicVelocity %></td>
+            <td><%= @hepatic_form.splenicFlowDir %></td>
+            <td><%= @hepatic_form.smvSize %></td>
+            <td><%= @hepatic_form.smvThrombus %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>smvVelocity</th>
+            <th>smvFlowDir</th>
+            <th>portalMainSize</th>
+            <th>portalMainThrombus</th>
+            <th>portalMainVelocity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.smvVelocity %></td>
+            <td><%= @hepatic_form.smvFlowDir %></td>
+            <td><%= @hepatic_form.portalMainSize %></td>
+            <td><%= @hepatic_form.portalMainThrombus %></td>
+            <td><%= @hepatic_form.portalMainVelocity %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>portalMainFlowDir</th>
+            <th>portalRightSize</th>
+            <th>portalRightThrombus</th>
+            <th>portalRightVelocity</th>
+            <th>portalRightFlowDir</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.portalMainFlowDir%></td>
+            <td><%= @hepatic_form.portalRightSize %></td>
+            <td><%= @hepatic_form.portalRightThrombus %></td>
+            <td><%= @hepatic_form.portalRightVelocity %></td>
+            <td><%= @hepatic_form.portalRightFlowDir %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>portalLeftSize</th>
+            <th>portalLeftThrombus</th>
+            <th>portalLeftVelocity</th>
+            <th>portalLeftFlowDir</th>
+            <th>hepaticMainSize</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.portalLeftSize %></td>
+            <td><%= @hepatic_form.portalLeftThrombus %></td>
+            <td><%= @hepatic_form.portalLeftVelocity %></td>
+            <td><%= @hepatic_form.portalLeftFlowDir %></td>
+            <td><%= @hepatic_form.hepaticMainSize %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>hepaticMainThrombus</th>
+            <th>hepaticMainVelocity</th>
+            <th>hepaticMainFlowDir</th>
+            <th>hepaticRightSize</th>
+            <th>hepaticRightThrombus</th>
+            <th>hepaticRightVelocity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.hepaticMainThrombus %></td>
+            <td><%= @hepatic_form.hepaticMainVelocity %></td>
+            <td><%= @hepatic_form.hepaticMainFlowDir %></td>
+            <td><%= @hepatic_form.hepaticRightSize %></td>
+            <td><%= @hepatic_form.hepaticRightThrombus %></td>
+            <td><%= @hepatic_form.hepaticRightVelocity %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>hepaticRightFlowDir</th>
+            <th>hepaticLeftSize</th>
+            <th>hepaticLeftThrombus</th>
+            <th>hepaticLeftVelocity</th>
+            <th>hepaticLeftFlowDir</th>
+            <th>ivcSize</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.hepaticRightFlowDir %></td>
+            <td><%= @hepatic_form.hepaticLeftSize %></td>
+            <td><%= @hepatic_form.hepaticLeftThrombus %></td>
+            <td><%= @hepatic_form.hepaticLeftVelocity %></td>
+            <td><%= @hepatic_form.hepaticLeftFlowDir %></td>
+            <td><%= @hepatic_form.ivcSize %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>ivcThrombus</th>
+            <th>ivcVelocity</th>
+            <th>ivcFlowDir</th>
+            <th>renalRightSize</th>
+            <th>renalRightThrombus</th>
+            <th>renalRightVelocity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.ivcThrombus %></td>
+            <td><%= @hepatic_form.ivcVelocity %></td>
+            <td><%= @hepatic_form.ivcFlowDir %></td>
+            <td><%= @hepatic_form.renalRightSize %></td>
+            <td><%= @hepatic_form.renalRightThrombus %></td>
+            <td><%= @hepatic_form.renalRightVelocity %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>renalRightFlowDir</th>
+            <th>renalLeftSize</th>
+            <th>renalLeftThrombus</th>
+            <th>renalLeftVelocity</th>
+            <th>renalLeftFlowDir</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.renalRightFlowDir %></td>
+            <td><%= @hepatic_form.renalLeftSize %></td>
+            <td><%= @hepatic_form.renalLeftThrombus %></td>
+            <td><%= @hepatic_form.renalLeftVelocity %></td>
+            <td><%= @hepatic_form.renalLeftFlowDir %></td>
+        </tr>
+    </tbody>
+                <thead>
+        <tr>
+            <th>liverSize</th>
+            <th>liverThrombus</th>
+            <th>liverVelocity</th>
+            <th>liverFlowDir</th>
+            <th>spleenSize</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.liverSize %></td>
+            <td><%= @hepatic_form.liverThrombus %></td>
+            <td><%= @hepatic_form.liverVelocity %></td>
+            <td><%= @hepatic_form.liverFlowDir %></td>
+            <td><%= @hepatic_form.spleenSize %></td>
+        </tr>
+    </tbody>
+                <thead>
+        <tr>
+            <th>spleenThrombus</th>
+            <th>spleenVelocity</th>
+            <th>spleenFlowDir</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @hepatic_form.spleenThrombus %></td>
+            <td><%= @hepatic_form.spleenVelocity %></td>
+            <td><%= @hepatic_form.spleenFlowDir %></td>
+        </tr>
+    </tbody>
+</table>

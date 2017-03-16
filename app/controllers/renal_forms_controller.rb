@@ -1,15 +1,15 @@
 class RenalFormsController < ApplicationController
     
     def new
-        @renal_form = RenalForm.new
+        @renal_form = current_user.renal_forms.build
         @renal_form.form = Form.new
-        @renal_form.form.technologist = Technologist.new
+        @btnText = "Create"
     end
     
     def create
-        @renal_form = RenalForm.new(renal_params)
+        @renal_form = current_user.renal_forms.build(renal_params)
         if(@renal_form.save)
-            flash[:success] = "Renal Form Created Succesfully"
+            flash[:success] = "Renal Form Created"
             redirect_to @renal_form
         else
             render 'new'
@@ -17,20 +17,22 @@ class RenalFormsController < ApplicationController
     end
     
     def show
-        @renal_form = renalForm.find(params[:id])
+        @renal_form = RenalForm.find(params[:id])
     end
     
     def index
         @page_title = "All Renal Forms"
-        @renal_forms = current_user.renal_forms
+        @renal_forms = RenalForm.all
     end
     
     def edit
         @page_title = "Edit Renal Form"
         @renal_form = RenalForm.find(params[:id])
+        @btnText = "Update"
     end
     
     def update
+        @carotid_form = CarotidForm.find(params[:id])
         if @renal_form.update_attributes(renal_params)
             flash.alert = "Renal Form Updated"
             redirect_to @renal_form

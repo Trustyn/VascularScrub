@@ -1,0 +1,13 @@
+<h1>User Technologist List</h1>
+<h2><%= link_to 'Add New Technologist', new_technologist_path %></h2>
+<table>
+    <% @technologists.each do |technologist| %>
+    <tr>
+        <td><%= link_to technologist.id, :action =>'show', :id => technologist.id %></td>
+        <td><%= link_to 'Edit', edit_technologist_path(technologist) %></td>
+        <td><%= link_to 'Delete', technologist, method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    
+</table>

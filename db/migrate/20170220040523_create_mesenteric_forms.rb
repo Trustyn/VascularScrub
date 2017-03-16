@@ -2,6 +2,7 @@ class CreateMesentericForms < ActiveRecord::Migration
   def change
     create_table :mesenteric_forms do |t|
       t.references :form, index: true, foreign_key: true
+      t.references :bruit, index: true, foreign_key: true
       t.boolean :abdominPain
       t.boolean :weightLoss
       t.boolean :chronicDiarrhea
