@@ -19,6 +19,10 @@ Technologist.create(firstname: "Bill", lastname: "O")
 Technologist.create(firstname: "Howard", lastname: "H")
 Technologist.create(firstname: "Sally", lastname: "P")
 
+#Dropdown menu for gender.
+Gender.create(gender: "Male")
+Gender.create(gender: "Female")
+
 #Default users just in case.
     #Branden Alder's
 User.create(username: "Trustyn", firstname: "Branden", lastname: "Alder",

@@ -2,6 +2,7 @@ class CreateCarotidForms < ActiveRecord::Migration
   def change
     create_table :carotid_forms do |t|
       t.references :form, index: true, foreign_key: true
+      t.references :bruit, index: true, foreign_key: true
       t.float :pulseCarotidRight
       t.float :pulseCarotidLeft
       t.float :pulseTemporalRight

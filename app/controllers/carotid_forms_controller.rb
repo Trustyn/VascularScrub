@@ -1,13 +1,14 @@
 class CarotidFormsController < ApplicationController
     
     def new
-        @carotid_form = CarotidForm.new
+        @carotid_form = current_user.carotid_forms.build
         @carotid_form.form = Form.new
-        @carotid_form.form.technologist = Technologist.new
+        @btnText = "Create"
+        #@carotid_form.form.technologist = Technologist.new
     end
     
     def create
-        @carotid_form = CarotidForm.new(carotid_params)
+        @carotid_form = current_user.carotid_forms.build(carotid_params)
         if(@carotid_form.save)
             flash[:success] = "Carotid Form Created Succesfully"
             redirect_to @carotid_form
@@ -28,9 +29,11 @@ class CarotidFormsController < ApplicationController
     def edit
         @page_title = "Edit Carotid Form"
         @carotid_form = CarotidForm.find(params[:id])
+        @btnText = "Update"
     end
     
     def update
+        @carotid_form = CarotidForm.find(params[:id])
         if @carotid_form.update_attributes(carotid_params)
             flash.alert = "Carotid Form Updated"
             redirect_to @carotid_form
@@ -47,16 +50,7 @@ class CarotidFormsController < ApplicationController
     
 private
     def carotid_params
-        params.require(:carotid_form).permit(   :forms [:age,
-                                                :gender,
-                                                :technologist_id,
-                                                :bpRight,
-                                                :bpLeft,
-                                                :history,
-                                                :symptoms,
-                                                :prelimResults,
-                                                :patientResults],
-                                                :pulseCarotidRight,
+        params.require(:carotid_form).permit(   :pulseCarotidRight,
                                                 :pulseCarotidLeft,
                                                 :pulseTemporalRight,
                                                 :pulseTemporalLeft,
@@ -107,11 +101,21 @@ private
                                                 :subclavianPSVRight,
                                                 :subclavianPSVLeft,
                                                 :subclavianEDVRight,
-                                                :subclavianEDVLeft)
+                                                :subclavianEDVLeft,
+                                                :form_attributes => [:age,
+                                                :gender_id,
+                                                :technologist_id,
+                                                :bpRight,
+                                                :bpLeft,
+                                                :history,
+                                                :symptoms,
+                                                :prelimResults,
+                                                :patientResults])
     end
     
     def correct_user
         @user = User.find(params[:id])
         redirect_to(root_url) unless current_user?@user
     end
+
 end

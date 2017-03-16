@@ -2,6 +2,8 @@ class UeArterialFormsController < ApplicationController
 
     def new
         @ue_arterial_form = UeArterialForm.new
+        @ue_arterial_form.form = Form.new
+        @ue_arterial_form.form.technologist = Technologist.new
     end
     
     def create

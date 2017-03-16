@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303104257) do
+ActiveRecord::Schema.define(version: 20170313192522) do
 
   create_table "bruits", force: :cascade do |t|
     t.string   "volume"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170303104257) do
 
   create_table "carotid_forms", force: :cascade do |t|
     t.integer  "form_id"
+    t.integer  "bruit_id"
     t.float    "pulseCarotidRight"
     t.float    "pulseCarotidLeft"
     t.float    "pulseTemporalRight"
@@ -77,10 +78,12 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.datetime "updated_at",              null: false
   end
 
+  add_index "carotid_forms", ["bruit_id"], name: "index_carotid_forms_on_bruit_id"
   add_index "carotid_forms", ["form_id"], name: "index_carotid_forms_on_form_id"
 
   create_table "forms", force: :cascade do |t|
     t.integer  "technologist_id"
+    t.integer  "gender_id"
     t.integer  "age"
     t.string   "gender"
     t.float    "bpRight"
@@ -94,8 +97,15 @@ ActiveRecord::Schema.define(version: 20170303104257) do
     t.integer  "user_id"
   end
 
+  add_index "forms", ["gender_id"], name: "index_forms_on_gender_id"
   add_index "forms", ["technologist_id"], name: "index_forms_on_technologist_id"
   add_index "forms", ["user_id"], name: "index_forms_on_user_id"
+
+  create_table "genders", force: :cascade do |t|
+    t.string   "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "hepatic_forms", force: :cascade do |t|
     t.integer  "form_id"
@@ -484,11 +494,14 @@ ActiveRecord::Schema.define(version: 20170303104257) do
   add_index "renal_forms", ["form_id"], name: "index_renal_forms_on_form_id"
 
   create_table "technologists", force: :cascade do |t|
+    t.integer  "bruit_id"
     t.string   "firstname"
     t.string   "lastname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "technologists", ["bruit_id"], name: "index_technologists_on_bruit_id"
 
   create_table "ue_arterial_forms", force: :cascade do |t|
     t.integer  "form_id"

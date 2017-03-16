@@ -2,6 +2,7 @@ class CreateForms < ActiveRecord::Migration
   def change
     create_table :forms do |t|
       t.references :technologist, index: true, foreign_key: true
+      t.references :gender, index: true, foreign_key: true
       t.integer :age
       t.string :gender
       t.float :bpRight

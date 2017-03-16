@@ -1,8 +1,10 @@
 class FormsController < ApplicationController
-      #before_action :correct_user, only: [:edit, :update, :destroy ]
+     
   
   def new
     @form = Form.new
+    @form.carotid_form.build
+    
   end
   
   

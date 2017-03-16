@@ -1,0 +1,219 @@
+<table>
+    <thead>
+        <tr>
+            <th>age</th>
+            <th>gender</th>
+            <th>technologist</th>
+            <th>blood_pressure_right</th>
+            <th>blood_pressure_left</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @form = @carotid_form.form %>
+            <td><%= @form.age %></td>
+            <td><%= @form.gender.gender %></td>
+            <td><%=  "#{@form.technologist.firstname}"+" "+"#{@form.technologist.lastname}" %></td>  
+            <td><%= @form.bpRight %></td>
+            <td><%= @form.bpLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <br/><br/>
+            <th>Other History</th>
+            <th>Other Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @form.history %></td>
+            <td><%= @form.symptoms %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <br/><br/>
+            <th>carotid_right</th>
+            <th>carotid_left</th>
+            <th>temporal_right</th>
+            <th>temporal_left</th>
+            <th>radial_right</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @carotid_form.pulseCarotidRight %></td>
+            <td><%= @carotid_form.pulseCarotidLeft %></td>
+            <td><%= @carotid_form.pulseTemporalRight %></td>
+            <td><%= @carotid_form.pulseTemporalLeft %></td>
+            <td><%= @carotid_form.pulseRadialRight %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>pulseRadialLeft</th>
+            <th>bruitsDisNeckRight</th>
+            <th>bruitsDisNeckLeft</th>
+            <th>bruitsMidNeckRight</th>
+            <th>bruitsMidNeckLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @carotid_form.pulseRadialLeft %></td>
+            <td><%= show_bruit(@carotid_form.bruitsDisNeckRight) %></td>
+            <td><%= show_bruit(@carotid_form.bruitsDisNeckLeft) %></td>
+            <td><%= show_bruit(@carotid_form.bruitsMidNeckRight) %></td>
+            <td><%= show_bruit(@carotid_form.bruitsMidNeckLeft) %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>bruitsProxNeckRight</th>
+            <th>bruitsProxNeckLeft</th>
+            <th>bruitsSupraRight</th>
+            <th>bruitsSupraLeft</th>
+            <th>bruitsChestRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= show_bruit(@carotid_form.bruitsProxNeckLeft) %></td>
+            <td><%= show_bruit(@carotid_form.bruitsProxNeckLeft) %></td>
+            <td><%= show_bruit(@carotid_form.bruitsSupraRight) %></td>
+            <td><%= show_bruit(@carotid_form.bruitsSupraLeft) %></td>
+            <td><%= show_bruit(@carotid_form.bruitsChestRight) %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>bruitsChestLeft</th>
+            <th>vertebralReversalRight</th>
+            <th>vertebralReversalLeft</th>
+            <th>ophthalmicReversalRight</th>
+            <th>ophthalmicReversalLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= show_bruit(@carotid_form.bruitsChestLeft) %></td>
+            <td><%= @carotid_form.vertebralReversalRight %></td>
+            <td><%= @carotid_form.vertebralReversalLeft %></td>
+            <td><%= @carotid_form.ophthalmicReversalRight %></td>
+            <td><%= @carotid_form.ophthalmicReversalLeft %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>dicaPSVRight</th>
+            <th>dicaPSVLeft</th>
+            <th>dicaEDVRight</th>
+            <th>dicaEDVLeft</th>
+            <th>micaPSVRight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @carotid_form.dicaPSVRight%></td>
+            <td><%= @carotid_form.dicaPSVLeft %></td>
+            <td><%= @carotid_form.dicaEDVRight %></td>
+            <td><%= @carotid_form.dicaEDVLeft %></td>
+            <td><%= @carotid_form.micaPSVRight %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>micaPSVLeft</th>
+            <th>micaEDVRight</th>
+            <th>micaEDVLeft</th>
+            <th>picaPSVRight</th>
+            <th>picaPSVLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @carotid_form.micaPSVLeft %></td>
+            <td><%= @carotid_form.micaEDVRight %></td>
+            <td><%= @carotid_form.micaEDVLeft %></td>
+            <td><%= @carotid_form.picaPSVRight %></td>
+            <td><%= @carotid_form.picaPSVLeft %></td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>picaEDVRight</th>
+            <th>picaEDVLeft</th>
+            <th>ecaPSVRight</th>
+            <th>ecaPSVLeft</th>
+            <th>ecaEDVRight</th>
+            <th>ecaEDVLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @carotid_form.picaEDVRight %></td>
+            <td><%= @carotid_form.picaEDVLeft %></td>
+            <td><%= @carotid_form.ecaPSVRight %></td>
+            <td><%= @carotid_form.ecaPSVLeft %></td>
+            <td><%= @carotid_form.ecaEDVRight %></td>
+            <td><%= @carotid_form.ecaEDVLeft %></td>
+        </tr>
+    </tbody>
+        <thead>
+        <tr>
+            <th>dccaPSVRight</th>
+            <th>dccaPSVLeft</th>
+            <th>dccaEDVRight</th>
+            <th>dccaEDVLeft</th>
+            <th>pccaPSVRight</th>
+            <th>pccaPSVLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @carotid_form.dccaPSVRight %></td>
+            <td><%= @carotid_form.dccaPSVLeft %></td>
+            <td><%= @carotid_form.dccaEDVRight %></td>
+            <td><%= @carotid_form.dccaEDVLeft %></td>
+            <td><%= @carotid_form.pccaPSVRight %></td>
+            <td><%= @carotid_form.pccaPSVLeft %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>pccaEDVRight</th>
+            <th>pccaEDVLeft</th>
+            <th>vertebralPSVRight</th>
+            <th>vertebralPSVLeft</th>
+            <th>vertebralEDVRight</th>
+            <th>vertebralEDVLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @carotid_form.pccaEDVRight %></td>
+            <td><%= @carotid_form.pccaEDVLeft %></td>
+            <td><%= @carotid_form.vertebralPSVRight %></td>
+            <td><%= @carotid_form.vertebralPSVLeft %></td>
+            <td><%= @carotid_form.vertebralEDVRight %></td>
+            <td><%= @carotid_form.vertebralEDVLeft %></td>
+        </tr>
+    </tbody>
+            <thead>
+        <tr>
+            <th>subclavianPSVRight</th>
+            <th>subclavianPSVLeft</th>
+            <th>subclavianEDVRight</th>
+            <th>subclavianEDVLeft</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @carotid_form.subclavianPSVRight %></td>
+            <td><%= @carotid_form.subclavianPSVLeft %></td>
+            <td><%= @carotid_form.subclavianEDVRight %></td>
+            <td><%= @carotid_form.subclavianEDVLeft %></td>
+        </tr>
+    </tbody>
+</table>

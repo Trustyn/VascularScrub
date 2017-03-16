@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
     #Relationships
     has_many :notes
     has_many :forms
+    has_many :carotid_forms, through: :forms
     #Accessible attributes outside of those permitted in controller
   attr_accessor :remember_token, :activation_token, :reset_token
   
