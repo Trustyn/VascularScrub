@@ -44,20 +44,12 @@ class MesentericFormsController < ApplicationController
     def destroy
         MesentericForm.find(params[:id]).destroy
         flash.alert = "Mesenteric Form Deleted"
-        redirect_to current_user
+        redirect_to root_url
     end
     
 private
     def mesenteric_params
-        params.require(:mesenteric_form).permit(   :forms [:age,
-                                                        :gender,
-                                                        :technologist_id,
-                                                        :bpRight,
-                                                        :bpLeft,
-                                                        :history,
-                                                        :symptoms,
-                                                        :prelimResults,
-                                                        :patientResults],
+        params.require(:mesenteric_form).permit(   
                                                         :abdominPain,
                                                         :weightLoss,
                                                         :chronicDiarrhea,
@@ -116,7 +108,16 @@ private
                                                         :imaFastEDV,
                                                         :imaPostEDV,
                                                         :imaFastRI,
-                                                        :imaPostRI)
+                                                        :imaPostRI,
+                                                        :form_attributes => [:age,
+                                                :gender_id,
+                                                :technologist_id,
+                                                :bpRight,
+                                                :bpLeft,
+                                                :history,
+                                                :symptoms,
+                                                :prelimResults,
+                                                :patientResults])
     end
     
     def correct_user

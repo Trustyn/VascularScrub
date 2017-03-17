@@ -1,5 +1,6 @@
 class HepaticFormsController < ApplicationController
-def new
+
+    def new
         @hepatic_form = current_user.hepatic_forms.build
         @hepatic_form.form = Form.new
         @btnText = "Create"
@@ -20,12 +21,12 @@ def new
     end
     
     def index
-        @page_title = "All hepatic Forms"
+        @page_title = "All Hepatic Forms"
         @hepatic_forms = HepaticForm.all
     end
     
     def edit
-        @page_title = "Edit hepatic Form"
+        @page_title = "Edit Hepatic Form"
         @hepatic_form = HepaticForm.find(params[:id])
         @btnText = "Update"
     end
@@ -43,21 +44,12 @@ def new
     def destroy
         HepaticForm.find(params[:id]).destroy
         flash.alert = "Hepatic Form Deleted"
-        redirect_to current_user
+        redirect_to root_url
     end
     
 private
     def hepatic_params
-        params.require(:hepatic_form).permit(   :forms [:age,
-                                                :gender,
-                                                :technologist_id,
-                                                :bpRight,
-                                                :bpLeft,
-                                                :history,
-                                                :symptoms,
-                                                :prelimResults,
-                                                :patientResults],
-                                                :organEnlarge,
+        params.require(:hepatic_form).permit(   :organEnlarge,
                                                 :portalHyperTension,
                                                 :cirrhosis,
                                                 :ascitites,
@@ -117,7 +109,16 @@ private
                                                 :spleenSize,
                                                 :spleenThrombus,
                                                 :spleenVelocity,
-                                                :spleenFlowDir)
+                                                :spleenFlowDir,
+                                                :form_attributes => [:age,
+                                                :gender_id,
+                                                :technologist_id,
+                                                :bpRight,
+                                                :bpLeft,
+                                                :history,
+                                                :symptoms,
+                                                :prelimResults,
+                                                :patientResults])
     end
     
     def correct_user

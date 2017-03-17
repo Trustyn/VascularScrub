@@ -3,7 +3,7 @@
 <table>
     <% @carotid_forms.each do |carotid_form| %>
     <tr>
-        <td><%= link_to carotid_form.id, :action =>'show', :id => carotid_form.id %></td>
+        <td><%= link_to "Form #{carotid_form.id}", :action =>'show', :id => carotid_form.id %></td>
         <td><%= link_to 'Edit', edit_carotid_form_path(carotid_form) %></td>
         <td><%= link_to 'Delete', carotid_form, method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>

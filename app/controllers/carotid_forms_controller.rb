@@ -44,7 +44,7 @@ class CarotidFormsController < ApplicationController
     def destroy
         CarotidForm.find(params[:id]).destroy
         flash.alert = "Carotid Form Deleted"
-        redirect_to current_user
+        redirect_to root_url
     end
     
 private

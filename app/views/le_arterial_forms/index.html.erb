@@ -3,7 +3,7 @@
 <table>
     <% @le_arterial_forms.each do |le_arterial_form| %>
     <tr>
-        <td><%= link_to le_arterial_form.id, :action =>'show', :id => le_arterial_form.id %></td>
+        <td><%= link_to "Form #{le_arterial_form.id}", :action =>'show', :id => le_arterial_form.id %></td>
         <td><%= link_to 'Edit', edit_le_arterial_form_path(le_arterial_form) %></td>
         <td><%= link_to 'Delete', le_arterial_form, method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>

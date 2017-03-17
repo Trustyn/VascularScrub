@@ -44,21 +44,12 @@ class LeVenousFormsController < ApplicationController
     def destroy
         LeVenousForm.find(params[:id]).destroy
         flash.alert = "LE Venous Form Deleted"
-        redirect_to current_user
+        redirect_to root_url
     end
     
 private
     def le_venous_params
-        params.require(:le_venous_form).permit(   :forms [:age,
-                                                          :gender,
-                                                          :technologist_id,
-                                                          :bpRight,
-                                                          :bpLeft,
-                                                          :history,
-                                                          :symptoms,
-                                                          :prelimResults,
-                                                          :patientResults],
-                                                          :admittingDX,
+        params.require(:le_venous_form).permit(           :admittingDX,
                                                           :pulEmb,
                                                           :dvt,
                                                           :otherSurgery,
@@ -82,7 +73,16 @@ private
                                                           :peronealRight,
                                                           :peronealLeft,
                                                           :peronealAcuteRight,
-                                                          :peronealAcuteLeft)
+                                                          :peronealAcuteLeft,
+                                                          :form_attributes => [:age,
+                                                :gender_id,
+                                                :technologist_id,
+                                                :bpRight,
+                                                :bpLeft,
+                                                :history,
+                                                :symptoms,
+                                                :prelimResults,
+                                                :patientResults])
     end
     
     def correct_user

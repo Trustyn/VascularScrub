@@ -1,0 +1,13 @@
+<h1>User Notes List</h1>
+<h2><%= link_to 'Add New Note', new_note_path %></h2>
+<table>
+    <% @notes.each do |note| %>
+    <tr>
+        <td><%= link_to note.name, :action =>'show', :id => note.id %></td>
+        <td><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td><%= link_to 'Delete', note, method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    
+</table>

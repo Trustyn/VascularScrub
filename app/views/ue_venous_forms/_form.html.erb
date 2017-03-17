@@ -1,14 +1,14 @@
-<%= form_for @carotid_form do |f| %>
+<%= form_for @ue_venous_form do |f| %>
     <%= f.fields_for :form do |ff| %>
     <%= ff.label "Technologist" %> <br/>
     <%= ff.select :technologist_id, options_for_select(Technologist.all.map{|s|["#{s.firstname} #{s.lastname}", s.id]},
-                                                   selected: @carotid_form.form.technologist_id),
+                                                   selected: @ue_venous_form.form.technologist_id),
                                                    class: "form-control" %> <br/>
     <%= ff.label "Age" %> <br/>
     <%= ff.number_field :age %> <br/>
     <%= ff.label "Gender" %> <br/>
     <%= ff.select :gender_id, options_for_select(Gender.all.map{|s|[s.gender, s.id]},
-                                                   selected: @carotid_form.form.gender),
+                                                   selected: @ue_venous_form.form.gender),
                                                    class: "form-control" %> <br/>
     <%= ff.label "Blood Pressure Right" %> <br/>
     <%= ff.number_field :bpRight %> <br/>
@@ -21,149 +21,107 @@
     
     <% end %>
     
-<section class="Pulses">
-    <h2>Pulse</h2>
-    <!--Pulses (Positive Floats)-->
-    <%= f.label "Right Carotid" %>
-    <%= f.number_field :pulseCarotidRight, class: "form-control" %>
-    <%= f.label "Left Carotid" %>
-    <%= f.number_field :pulseCarotidLeft, class: "form-control" %>
-    <%= f.label "Right Temporal" %>
-    <%= f.number_field :pulseTemporalRight, class: "form-control" %>
-    <%= f.label "Left Temporal" %>
-    <%= f.number_field :pulseTemporalLeft, class: "form-control" %>
-    <%= f.label "Right Radial" %>
-    <%= f.number_field :pulseRadialRight, class: "form-control" %>
-    <%= f.label "Left Radial" %>
-    <%= f.number_field :pulseRadialLeft, class: "form-control" %>
-</section>
 
-<section class="Bruits">
-    <h2>Bruits</h2>
-    <!--Bruits Dropdown Lists(None, Quiet, Loud)-->
-    <%= f.label "Bruits Right Distal Neck" %>
-    <%= f.select :bruitsDisNeckRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsDisNeckRight),
-                                                      class: "form-control" %>    
-    <%= f.label "Bruits Left Distal Neck" %>
-    <%= f.select :bruitsDisNeckLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsDisNeckLeft),
-                                                      class: "form-control" %>                                               
-    <%= f.label "Bruits Right Mid Neck" %>
-    <%= f.select :bruitsMidNeckRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsMidNeckRight),
-                                                      class: "form-control" %>                                                    
-    <%= f.label "Bruits Left Mid Neck" %>                                                  
-    <%= f.select :bruitsMidNeckLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsMidNeckLeft),
-                                                      class: "form-control" %>                                                   
-    <%= f.label "Bruits Right Prox Neck" %>
-    <%= f.select :bruitsProxNeckRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsProxNeckRight),
-                                                      class: "form-control" %>                                                    
-    <%= f.label "Bruits Left Prox Neck" %>
-    <%= f.select :bruitsProxNeckLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsProxNeckLeft),
-                                                      class: "form-control" %>
-    <%= f.label "Bruits Right Supra" %>
-    <%= f.select :bruitsSupraRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsSupraRight),
-                                                      class: "form-control" %> 
-    <%= f.label "Bruits Left Supra" %>
-    <%= f.select :bruitsSupraLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsSupraLeft),
-                                                      class: "form-control" %>                                     
-    <%= f.label "Bruits Right Chest" %>
-    <%= f.select :bruitsChestRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsChestRight),
-                                                      class: "form-control" %>                                                        
-    <%= f.label "Bruits Left Chest" %>
-    <%= f.select :bruitsChestLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsChestLeft),
-                                                      class: "form-control" %> 
-</section>              
-
-    <h2>Doppler Spectral Velocity Analysis</h2>
-    <!--Doppler Spectral Velocity Analysis (Negative & Positive Floats)-->
-    <%= f.label :vertebralReversalRight %>
-    <%= f.number_field :vertebralReversalRight , class: "form-control" %>    
-    <%= f.label :vertebralReversalLeft %>
-    <%= f.number_field :vertebralReversalLeft , class: "form-control" %>    
-    <%= f.label :ophthalmicReversalRight %>
-    <%= f.number_field :ophthalmicReversalRight , class: "form-control" %>    
-    <%= f.label :ophthalmicReversalLeft %>
-    <%= f.number_field :ophthalmicReversalLeft , class: "form-control" %>    
-    <%= f.label :dicaPSVRight %>
-    <%= f.number_field :dicaPSVRight , class: "form-control" %>    
-    <%= f.label :dicaPSVLeft %>
-    <%= f.number_field :dicaPSVLeft , class: "form-control" %>    
-    <%= f.label :dicaEDVRight %>
-    <%= f.number_field :dicaEDVRight , class: "form-control" %>
-    <%= f.label :dicaEDVLeft %>
-    <%= f.number_field :dicaEDVLeft , class: "form-control" %>
-    <%= f.label :micaPSVRight %>
-    <%= f.number_field :micaPSVRight , class: "form-control" %>
-    <%= f.label :micaPSVLeft %>
-    <%= f.number_field :micaPSVLeft , class: "form-control" %>    
-    <%= f.label :micaEDVRight %>
-    <%= f.number_field :micaEDVRight , class: "form-control" %>
-    <%= f.label :micaEDVLeft %>
-    <%= f.number_field :micaEDVLeft , class: "form-control" %>
-    <%= f.label :picaPSVRight %>
-    <%= f.number_field :picaPSVRight , class: "form-control" %>
-    <%= f.label :picaPSVLeft %>
-    <%= f.number_field :picaPSVLeft , class: "form-control" %>
-    <%= f.label :picaEDVRight %>
-    <%= f.number_field :picaEDVRight , class: "form-control" %>
-    <%= f.label :picaEDVLeft %>
-    <%= f.number_field :picaEDVLeft , class: "form-control" %>
-    <%= f.label :ecaPSVRight %>
-    <%= f.number_field :ecaPSVRight , class: "form-control" %>
-    <%= f.label :ecaPSVLeft %>
-    <%= f.number_field :ecaPSVLeft , class: "form-control" %>
-    <%= f.label :ecaEDVRight %>
-    <%= f.number_field :ecaEDVRight , class: "form-control" %>
-    <%= f.label :ecaEDVLeft %>
-    <%= f.number_field :ecaEDVLeft , class: "form-control" %>
-    <%= f.label :dccaPSVRight %>
-    <%= f.number_field :dccaPSVRight , class: "form-control" %>    
-    <%= f.label :dccaPSVLeft %>
-    <%= f.number_field :dccaPSVLeft , class: "form-control" %>    
-    <%= f.label :dccaEDVRight %>
-    <%= f.number_field :dccaEDVRight , class: "form-control" %>    
-    <%= f.label :dccaEDVLeft %>
-    <%= f.number_field :dccaEDVLeft , class: "form-control" %>    
-    <%= f.label :pccaPSVLeft %>
-    <%= f.number_field :pccaPSVLeft , class: "form-control" %>    
-    <%= f.label :pccaEDVRight %>
-    <%= f.number_field :pccaEDVRight , class: "form-control" %>    
-    <%= f.label :pccaEDVLeft %>
-    <%= f.number_field :pccaEDVLeft , class: "form-control" %>    
-    <%= f.label :vertebralPSVRight %>
-    <%= f.number_field :vertebralPSVRight , class: "form-control" %>    
-    <%= f.label :vertebralPSVLeft %>
-    <%= f.number_field :vertebralPSVLeft , class: "form-control" %>    
-    <%= f.label :vertebralEDVRight %>
-    <%= f.number_field :vertebralEDVRight , class: "form-control" %>    
-    <%= f.label :vertebralEDVLeft %>
-    <%= f.number_field :vertebralEDVLeft , class: "form-control" %>    
-    <%= f.label :subclavianPSVRight %>
-    <%= f.number_field :subclavianPSVRight , class: "form-control" %>    
-    <%= f.label :subclavianPSVLeft %>
-    <%= f.number_field :subclavianPSVLeft , class: "form-control" %>    
-    <%= f.label :subclavianEDVRight %>
-    <%= f.number_field :subclavianEDVRight , class: "form-control" %>
-    <%= f.label :subclavianEDVLeft %>
-    <%= f.number_field :subclavianEDVLeft , class: "form-control" %>
-
-
-    <!--Technologist's Preliminary Impression (Text Box Collapsable)-->
-    <%= f.label "Preliminary Results", class: "text-box" %>
-
-    <!--Paitient Results (Text Box Collapsable)-->
-    <%= f.label "Paitient Results", class: "text-box" %>
+    <%= f.label :recentEvasiveProc %>
+    <%= f.check_box :recentEvasiveProc , class: "form-control" %>
+    <%= f.label :recentAVFistula %>
+    <%= f.check_box :recentAVFistula , class: "form-control" %>
+    <%= f.label :admittingDisease %>
+    <%= f.text_field :admittingDisease , class: "form-control" %>
+    <%= f.label :surgery %>
+    <%= f.check_box :surgery , class: "form-control" %>
+    <%= f.label :otherSurgery %>
+    <%= f.text_field :otherSurgery , class: "form-control" %>
+    <%= f.label :diabetes %>
+    <%= f.check_box :diabetes , class: "form-control" %>
+    <%= f.label :myocardialInf %>
+    <%= f.check_box :myocardialInf , class: "form-control" %>
+    <%= f.label :conHeartFailure %>
+    <%= f.check_box :conHeartFailure , class: "form-control" %>
+    <%= f.label :otherHistory %>
+    <%= f.text_field :otherHistory , class: "form-control" %>
+    <%= f.label :pain %>
+    <%= f.check_box :pain , class: "form-control" %>
+    <%= f.label :numbness %>
+    <%= f.check_box :numbness , class: "form-control" %>
+    <%= f.label :colorChange %>
+    <%= f.check_box :colorChange , class: "form-control" %>
+    <%= f.label :otherSymptoms %>
+    <%= f.text_field :otherSymptoms , class: "form-control" %>
+    <%= f.label :subclavianWaveformRight %>
+    <%= f.text_field :subclavianWaveformRight , class: "form-control" %>
+    <%= f.label :subclavianCompressionRight %>
+    <%= f.check_box :subclavianCompressionRight , class: "form-control" %>
+    <%= f.label :subclavianWaveformLeft %>
+    <%= f.text_field :subclavianWaveformLeft , class: "form-control" %>
+    <%= f.label :subclavianCompressionLeft %>
+    <%= f.check_box :subclavianCompressionLeft , class: "form-control" %>
+    <%= f.label :axillaryWaveformRight %>
+    <%= f.text_field :axillaryWaveformRight , class: "form-control" %>
+    <%= f.label :axillaryCompressionRight %>
+    <%= f.check_box :axillaryCompressionRight , class: "form-control" %>
+    <%= f.label :axillaryWaveformLeft %>
+    <%= f.text_field :axillaryWaveformLeft , class: "form-control" %>
+    <%= f.label :axillaryCompressionLeft %>
+    <%= f.check_box :axillaryCompressionLeft , class: "form-control" %>
+    <%= f.label :brachialWaveformRight %>
+    <%= f.text_field :brachialWaveformRight , class: "form-control" %>
+    <%= f.label :brachialCompressionRight %>
+    <%= f.check_box :brachialCompressionRight , class: "form-control" %>
+    <%= f.label :brachialWaveformLeft %>
+    <%= f.text_field :brachialWaveformLeft , class: "form-control" %>
+    <%= f.label :brachialCompressionLeft %>
+    <%= f.check_box :brachialCompressionLeft , class: "form-control" %>
+    <%= f.label :radialWaveformRight %>
+    <%= f.text_field :radialWaveformRight , class: "form-control" %>
+    <%= f.label :radialCompressionRight %>
+    <%= f.check_box :radialCompressionRight , class: "form-control" %>
+    <%= f.label :radialWaveformLeft %>
+    <%= f.text_field :radialWaveformLeft , class: "form-control" %>
+    <%= f.label :radialCompressionLeft %>
+    <%= f.check_box :radialCompressionLeft , class: "form-control" %>
+    <%= f.label :ulnarWaveformRight %>
+    <%= f.text_field :ulnarWaveformRight , class: "form-control" %>
+    <%= f.label :ulnarCompressionRight %>
+    <%= f.check_box :ulnarCompressionRight , class: "form-control" %>
+    <%= f.label :ulnarWaveformLeft %>
+    <%= f.text_field :ulnarWaveformLeft , class: "form-control" %>
+    <%= f.label :ulnarCompressionLeft %>
+    <%= f.check_box :ulnarCompressionLeft , class: "form-control" %>
+    <%= f.label :basilicWaveformRight %>
+    <%= f.text_field :basilicWaveformRight , class: "form-control" %>
+    <%= f.label :basilicCompressionRight %>
+    <%= f.check_box :basilicCompressionRight , class: "form-control" %>
+    <%= f.label :basilicWaveformLeft %>
+    <%= f.text_field :basilicWaveformLeft , class: "form-control" %>
+    <%= f.label :basilicCompressionLeft %>
+    <%= f.check_box :basilicCompressionLeft , class: "form-control" %>
+    <%= f.label :cephalicWaveformRight %>
+    <%= f.text_field :cephalicWaveformRight , class: "form-control" %>
+    <%= f.label :cephalicCompressionRight %>
+    <%= f.check_box :cephalicCompressionRight , class: "form-control" %>
+    <%= f.label :cephalicWaveformLeft %>
+    <%= f.text_field :cephalicWaveformLeft , class: "form-control" %>
+    <%= f.label :cephalicCompressionLeft %>
+    <%= f.check_box :cephalicCompressionLeft , class: "form-control" %>
+    <%= f.label :medCubitalWaveformRight %>
+    <%= f.text_field :medCubitalWaveformRight , class: "form-control" %>
+    <%= f.label :medCubitalCompressionRight %>
+    <%= f.check_box :medCubitalCompressionRight , class: "form-control" %>
+    <%= f.label :medCubitalWaveformLeft %>
+    <%= f.text_field :medCubitalWaveformLeft , class: "form-control" %>
+    <%= f.label :medCubitalCompressionLeft %>
+    <%= f.check_box :medCubitalCompressionLeft , class: "form-control" %>
+    <%= f.label :intJugularWaveformRight %>
+    <%= f.text_field :intJugularWaveformRight , class: "form-control" %>
+    <%= f.label :intJugularCompressionRight %>
+    <%= f.check_box :intJugularCompressionRight , class: "form-control" %>
+    <%= f.label :intJugularWaveformLeft %>
+    <%= f.text_field :intJugularWaveformLeft , class: "form-control" %>
+    <%= f.label :intJugularCompressionLeft %>
+    <%= f.check_box :intJugularCompressionLeft , class: "form-control" %>
     
-    <!--Creates Exam (Save's)-->
+
     
     <%= f.submit "#{@btnText}", class: "btn btn-main" %>
     

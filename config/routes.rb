@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   resources :hepatic_forms
   resources :le_arterial_forms
   resources :le_venous_forms
-  resources :technologist
+  resources :technologists
+  resources :notes
 end

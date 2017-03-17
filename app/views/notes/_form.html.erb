@@ -1,0 +1,12 @@
+<%= form_for @note do |f| %>
+    
+    <%= f.label "Name" %>
+    <%= f.text_field :name %> <br/>
+    <%= f.label "Content" %>
+    <%= f.text_field :content %> <br/>
+
+    <!--Creates Exam (Save's)-->
+    
+    <%= f.submit "#{@btnText}", class: "btn btn-main" %>
+    
+<% end %>

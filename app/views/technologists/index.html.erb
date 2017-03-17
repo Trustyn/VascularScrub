@@ -3,7 +3,7 @@
 <table>
     <% @technologists.each do |technologist| %>
     <tr>
-        <td><%= link_to technologist.id, :action =>'show', :id => technologist.id %></td>
+        <td><%= link_to "#{technologist.firstname + ' ' + technologist.lastname}", :action =>'show', :id => technologist.id %></td>
         <td><%= link_to 'Edit', edit_technologist_path(technologist) %></td>
         <td><%= link_to 'Delete', technologist, method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>

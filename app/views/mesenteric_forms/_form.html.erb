@@ -1,14 +1,14 @@
-<%= form_for @carotid_form do |f| %>
+<%= form_for @mesenteric_form do |f| %>
     <%= f.fields_for :form do |ff| %>
     <%= ff.label "Technologist" %> <br/>
     <%= ff.select :technologist_id, options_for_select(Technologist.all.map{|s|["#{s.firstname} #{s.lastname}", s.id]},
-                                                   selected: @carotid_form.form.technologist_id),
+                                                   selected: @mesenteric_form.form.technologist_id),
                                                    class: "form-control" %> <br/>
     <%= ff.label "Age" %> <br/>
     <%= ff.number_field :age %> <br/>
     <%= ff.label "Gender" %> <br/>
     <%= ff.select :gender_id, options_for_select(Gender.all.map{|s|[s.gender, s.id]},
-                                                   selected: @carotid_form.form.gender),
+                                                   selected: @mesenteric_form.form.gender),
                                                    class: "form-control" %> <br/>
     <%= ff.label "Blood Pressure Right" %> <br/>
     <%= ff.number_field :bpRight %> <br/>
@@ -21,149 +21,127 @@
     
     <% end %>
     
-<section class="Pulses">
-    <h2>Pulse</h2>
-    <!--Pulses (Positive Floats)-->
-    <%= f.label "Right Carotid" %>
-    <%= f.number_field :pulseCarotidRight, class: "form-control" %>
-    <%= f.label "Left Carotid" %>
-    <%= f.number_field :pulseCarotidLeft, class: "form-control" %>
-    <%= f.label "Right Temporal" %>
-    <%= f.number_field :pulseTemporalRight, class: "form-control" %>
-    <%= f.label "Left Temporal" %>
-    <%= f.number_field :pulseTemporalLeft, class: "form-control" %>
-    <%= f.label "Right Radial" %>
-    <%= f.number_field :pulseRadialRight, class: "form-control" %>
-    <%= f.label "Left Radial" %>
-    <%= f.number_field :pulseRadialLeft, class: "form-control" %>
-</section>
 
-<section class="Bruits">
-    <h2>Bruits</h2>
-    <!--Bruits Dropdown Lists(None, Quiet, Loud)-->
-    <%= f.label "Bruits Right Distal Neck" %>
-    <%= f.select :bruitsDisNeckRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsDisNeckRight),
-                                                      class: "form-control" %>    
-    <%= f.label "Bruits Left Distal Neck" %>
-    <%= f.select :bruitsDisNeckLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsDisNeckLeft),
-                                                      class: "form-control" %>                                               
-    <%= f.label "Bruits Right Mid Neck" %>
-    <%= f.select :bruitsMidNeckRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsMidNeckRight),
-                                                      class: "form-control" %>                                                    
-    <%= f.label "Bruits Left Mid Neck" %>                                                  
-    <%= f.select :bruitsMidNeckLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsMidNeckLeft),
-                                                      class: "form-control" %>                                                   
-    <%= f.label "Bruits Right Prox Neck" %>
-    <%= f.select :bruitsProxNeckRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsProxNeckRight),
-                                                      class: "form-control" %>                                                    
-    <%= f.label "Bruits Left Prox Neck" %>
-    <%= f.select :bruitsProxNeckLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsProxNeckLeft),
-                                                      class: "form-control" %>
-    <%= f.label "Bruits Right Supra" %>
-    <%= f.select :bruitsSupraRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsSupraRight),
-                                                      class: "form-control" %> 
-    <%= f.label "Bruits Left Supra" %>
-    <%= f.select :bruitsSupraLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsSupraLeft),
-                                                      class: "form-control" %>                                     
-    <%= f.label "Bruits Right Chest" %>
-    <%= f.select :bruitsChestRight, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsChestRight),
-                                                      class: "form-control" %>                                                        
-    <%= f.label "Bruits Left Chest" %>
-    <%= f.select :bruitsChestLeft, options_for_select(Bruit.all.map{|s|[s.volume, s.id]},
-                                                      selected: @carotid_form.bruitsChestLeft),
-                                                      class: "form-control" %> 
-</section>              
-
-    <h2>Doppler Spectral Velocity Analysis</h2>
-    <!--Doppler Spectral Velocity Analysis (Negative & Positive Floats)-->
-    <%= f.label :vertebralReversalRight %>
-    <%= f.number_field :vertebralReversalRight , class: "form-control" %>    
-    <%= f.label :vertebralReversalLeft %>
-    <%= f.number_field :vertebralReversalLeft , class: "form-control" %>    
-    <%= f.label :ophthalmicReversalRight %>
-    <%= f.number_field :ophthalmicReversalRight , class: "form-control" %>    
-    <%= f.label :ophthalmicReversalLeft %>
-    <%= f.number_field :ophthalmicReversalLeft , class: "form-control" %>    
-    <%= f.label :dicaPSVRight %>
-    <%= f.number_field :dicaPSVRight , class: "form-control" %>    
-    <%= f.label :dicaPSVLeft %>
-    <%= f.number_field :dicaPSVLeft , class: "form-control" %>    
-    <%= f.label :dicaEDVRight %>
-    <%= f.number_field :dicaEDVRight , class: "form-control" %>
-    <%= f.label :dicaEDVLeft %>
-    <%= f.number_field :dicaEDVLeft , class: "form-control" %>
-    <%= f.label :micaPSVRight %>
-    <%= f.number_field :micaPSVRight , class: "form-control" %>
-    <%= f.label :micaPSVLeft %>
-    <%= f.number_field :micaPSVLeft , class: "form-control" %>    
-    <%= f.label :micaEDVRight %>
-    <%= f.number_field :micaEDVRight , class: "form-control" %>
-    <%= f.label :micaEDVLeft %>
-    <%= f.number_field :micaEDVLeft , class: "form-control" %>
-    <%= f.label :picaPSVRight %>
-    <%= f.number_field :picaPSVRight , class: "form-control" %>
-    <%= f.label :picaPSVLeft %>
-    <%= f.number_field :picaPSVLeft , class: "form-control" %>
-    <%= f.label :picaEDVRight %>
-    <%= f.number_field :picaEDVRight , class: "form-control" %>
-    <%= f.label :picaEDVLeft %>
-    <%= f.number_field :picaEDVLeft , class: "form-control" %>
-    <%= f.label :ecaPSVRight %>
-    <%= f.number_field :ecaPSVRight , class: "form-control" %>
-    <%= f.label :ecaPSVLeft %>
-    <%= f.number_field :ecaPSVLeft , class: "form-control" %>
-    <%= f.label :ecaEDVRight %>
-    <%= f.number_field :ecaEDVRight , class: "form-control" %>
-    <%= f.label :ecaEDVLeft %>
-    <%= f.number_field :ecaEDVLeft , class: "form-control" %>
-    <%= f.label :dccaPSVRight %>
-    <%= f.number_field :dccaPSVRight , class: "form-control" %>    
-    <%= f.label :dccaPSVLeft %>
-    <%= f.number_field :dccaPSVLeft , class: "form-control" %>    
-    <%= f.label :dccaEDVRight %>
-    <%= f.number_field :dccaEDVRight , class: "form-control" %>    
-    <%= f.label :dccaEDVLeft %>
-    <%= f.number_field :dccaEDVLeft , class: "form-control" %>    
-    <%= f.label :pccaPSVLeft %>
-    <%= f.number_field :pccaPSVLeft , class: "form-control" %>    
-    <%= f.label :pccaEDVRight %>
-    <%= f.number_field :pccaEDVRight , class: "form-control" %>    
-    <%= f.label :pccaEDVLeft %>
-    <%= f.number_field :pccaEDVLeft , class: "form-control" %>    
-    <%= f.label :vertebralPSVRight %>
-    <%= f.number_field :vertebralPSVRight , class: "form-control" %>    
-    <%= f.label :vertebralPSVLeft %>
-    <%= f.number_field :vertebralPSVLeft , class: "form-control" %>    
-    <%= f.label :vertebralEDVRight %>
-    <%= f.number_field :vertebralEDVRight , class: "form-control" %>    
-    <%= f.label :vertebralEDVLeft %>
-    <%= f.number_field :vertebralEDVLeft , class: "form-control" %>    
-    <%= f.label :subclavianPSVRight %>
-    <%= f.number_field :subclavianPSVRight , class: "form-control" %>    
-    <%= f.label :subclavianPSVLeft %>
-    <%= f.number_field :subclavianPSVLeft , class: "form-control" %>    
-    <%= f.label :subclavianEDVRight %>
-    <%= f.number_field :subclavianEDVRight , class: "form-control" %>
-    <%= f.label :subclavianEDVLeft %>
-    <%= f.number_field :subclavianEDVLeft , class: "form-control" %>
+    <%= f.label "abdominPain" %>
+    <%= f.check_box :abdominPain , class: "form-control" %>
+    <%= f.label "weightLoss" %>
+    <%= f.check_box :weightLoss , class: "form-control" %>
+    <%= f.label "chronicDiarrhea" %>
+    <%= f.check_box :chronicDiarrhea , class: "form-control" %>
+    <%= f.label "bowellInfarction" %>
+    <%= f.check_box :bowellInfarction , class: "form-control" %>
+    <%= f.label "otherHistory" %>
+    <%= f.text_field :otherHistory , class: "form-control" %>
+    <%= f.label "aortaFastPSV" %>
+    <%= f.number_field :aortaFastPSV , class: "form-control" %>
+    <%= f.label "aortaPostPSV" %>
+    <%= f.number_field :aortaPostPSV , class: "form-control" %>
+    <%= f.label "aortaFastEDV" %>
+    <%= f.number_field :aortaFastEDV , class: "form-control" %>
+    <%= f.label "aortaPostEDV" %>
+    <%= f.number_field :aortaPostEDV, class: "form-control" %>
+    <%= f.label "aortaFastRI" %>
+    <%= f.number_field :aortaFastRI , class: "form-control" %>
+    <%= f.label "aortaPostRI" %>
+    <%= f.number_field :aortaPostRI , class: "form-control" %>
+    <%= f.label "celiacOriginFastPSV" %>
+    <%= f.number_field :celiacOriginFastPSV , class: "form-control" %>
+    <%= f.label "celiacOriginPostPSV" %>
+    <%= f.number_field :celiacOriginPostPSV , class: "form-control" %>
+    <%= f.label "celiacOriginFastEDV" %>
+    <%= f.number_field :celiacOriginFastEDV , class: "form-control" %>
+    <%= f.label "celiacOriginPostEDV" %>
+    <%= f.number_field :celiacOriginPostEDV , class: "form-control" %>
+    <%= f.label "celiacOriginFastRI" %>
+    <%= f.number_field :celiacOriginFastRI , class: "form-control" %>
+    <%= f.label "celiacOriginPostRI" %>
+    <%= f.number_field :celiacOriginPostRI , class: "form-control" %>
+    <%= f.label "celiacMidFastPSV" %>
+    <%= f.number_field :celiacMidFastPSV , class: "form-control" %>
+    <%= f.label "celiacMidPostPSV" %>
+    <%= f.number_field :celiacMidPostPSV , class: "form-control" %>
+    <%= f.label "celiacMidFastEDV" %>
+    <%= f.number_field :celiacMidFastEDV , class: "form-control" %>
+    <%= f.label "celiacMidPostEDV" %>
+    <%= f.number_field :celiacMidPostEDV , class: "form-control" %>
+    <%= f.label "celiacMidFastRI" %>
+    <%= f.number_field :celiacMidFastRI , class: "form-control" %>
+    <%= f.label "celiacMidPostRI" %>
+    <%= f.number_field :celiacMidPostRI , class: "form-control" %>
+    <%= f.label "smaOriginFastPSV" %>
+    <%= f.number_field :smaOriginFastPSV , class: "form-control" %>
+    <%= f.label "smaOriginPostPSV" %>
+    <%= f.number_field :smaOriginPostPSV , class: "form-control" %>
+    <%= f.label "smaOriginFastEDV" %>
+    <%= f.number_field :smaOriginFastEDV , class: "form-control" %>
+    <%= f.label "smaOriginPostEDV" %>
+    <%= f.number_field :smaOriginPostEDV , class: "form-control" %>
+    <%= f.label "smaOriginFastRI" %>
+    <%= f.number_field :smaOriginFastRI , class: "form-control" %>
+    <%= f.label "smaOriginPostRI" %>
+    <%= f.number_field :smaOriginPostRI , class: "form-control" %>
+    <%= f.label "smaMidFastPSV" %>
+    <%= f.number_field :smaMidFastPSV , class: "form-control" %>
+    <%= f.label "smaMidPostPSV" %>
+    <%= f.number_field :smaMidPostPSV , class: "form-control" %>
+    <%= f.label "smaMidFastEDV" %>
+    <%= f.number_field :smaMidFastEDV , class: "form-control" %>
+    <%= f.label "smaMidPostEDV" %>
+    <%= f.number_field :smaMidPostEDV , class: "form-control" %>
+    <%= f.label "smaMidFastRI" %>
+    <%= f.number_field :smaMidFastRI , class: "form-control" %>
+    <%= f.label "smaMidPostRI" %>
+    <%= f.number_field :smaMidPostRI , class: "form-control" %>
+    <%= f.label "smaDistalFastPSV" %>
+    <%= f.number_field :smaDistalFastPSV , class: "form-control" %>
+    <%= f.label "smaDistalPostPSV" %>
+    <%= f.number_field :smaDistalPostPSV , class: "form-control" %>
+    <%= f.label "smaDistalFastEDV" %>
+    <%= f.number_field :smaDistalFastEDV , class: "form-control" %>
+    <%= f.label "smaDistalPostEDV" %>
+    <%= f.number_field :smaDistalPostEDV , class: "form-control" %>
+    <%= f.label "smaDistalFastRI" %>
+    <%= f.number_field :smaDistalFastRI , class: "form-control" %>
+    <%= f.label "smaDistalPostRI" %>
+    <%= f.number_field :smaDistalPostRI , class: "form-control" %>
+    <%= f.label "hepaticFastPSV" %>
+    <%= f.number_field :hepaticFastPSV , class: "form-control" %>
+    <%= f.label "hepaticPostPSV" %>
+    <%= f.number_field :hepaticPostPSV , class: "form-control" %>
+    <%= f.label "hepaticFastEDV" %>
+    <%= f.number_field :hepaticFastEDV , class: "form-control" %>
+    <%= f.label "hepaticPostEDV" %>
+    <%= f.number_field :hepaticPostEDV , class: "form-control" %>
+    <%= f.label "hepaticFastRI" %>
+    <%= f.number_field :hepaticFastRI , class: "form-control" %>
+    <%= f.label "hepaticPostRI" %>
+    <%= f.number_field :hepaticPostRI , class: "form-control" %>
+    <%= f.label "splenicFastPSV" %>
+    <%= f.number_field :splenicFastPSV , class: "form-control" %>
+    <%= f.label "splenicPostPSV" %>
+    <%= f.number_field :splenicPostPSV , class: "form-control" %>
+    <%= f.label "splenicFastEDV" %>
+    <%= f.number_field :splenicFastEDV , class: "form-control" %>
+    <%= f.label "splenicPostEDV" %>
+    <%= f.number_field :splenicPostEDV , class: "form-control" %>
+    <%= f.label "splenicFastRI" %>
+    <%= f.number_field :splenicFastRI , class: "form-control" %>
+    <%= f.label "splenicPostRI" %>
+    <%= f.number_field :splenicPostRI , class: "form-control" %>
+    <%= f.label "imaFastPSV" %>
+    <%= f.number_field :imaFastPSV , class: "form-control" %>
+    <%= f.label "imaPostPSV" %>
+    <%= f.number_field :imaPostPSV , class: "form-control" %>
+    <%= f.label "imaFastEDV" %>
+    <%= f.number_field :imaFastEDV , class: "form-control" %>
+    <%= f.label "imaPostEDV" %>
+    <%= f.number_field :imaPostEDV , class: "form-control" %>
+    <%= f.label "imaFastRI" %>
+    <%= f.number_field :imaFastRI , class: "form-control" %>
+    <%= f.label "imaPostRI" %>
+    <%= f.number_field :imaPostRI , class: "form-control" %>
 
 
-    <!--Technologist's Preliminary Impression (Text Box Collapsable)-->
-    <%= f.label "Preliminary Results", class: "text-box" %>
-
-    <!--Paitient Results (Text Box Collapsable)-->
-    <%= f.label "Paitient Results", class: "text-box" %>
-    
-    <!--Creates Exam (Save's)-->
     
     <%= f.submit "#{@btnText}", class: "btn btn-main" %>
     

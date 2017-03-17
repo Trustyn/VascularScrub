@@ -2,8 +2,16 @@ class User < ActiveRecord::Base
   
     #Relationships
     has_many :notes
+    has_many :technologists
     has_many :forms
     has_many :carotid_forms, through: :forms
+    has_many :hepatic_forms, through: :forms
+    has_many :renal_forms, through: :forms
+    has_many :mesenteric_forms, through: :forms
+    has_many :le_arterial_forms, through: :forms
+    has_many :le_venous_forms, through: :forms
+    has_many :ue_arterial_forms, through: :forms
+    has_many :ue_venous_forms, through: :forms
     #Accessible attributes outside of those permitted in controller
   attr_accessor :remember_token, :activation_token, :reset_token
   

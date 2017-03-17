@@ -9,7 +9,7 @@ class LeArterialFormsController < ApplicationController
     def create
         @le_arterial_form = current_user.le_arterial_forms.build(le_arterial_params)
         if(@le_arterial_form.save)
-            flash[:success] = LE Arterial Form Created Succesfully
+            flash[:success] = "LE Arterial Form Created"
             redirect_to @le_arterial_form
         else
             render 'new'
@@ -21,20 +21,20 @@ class LeArterialFormsController < ApplicationController
     end
     
     def index
-        @page_title = All LE Arterial Forms
+        @page_title = "All LE Arterial Forms"
         @le_arterial_forms = LeArterialForm.all
     end
     
     def edit
-        @page_title = Edit LE Arterial Form
+        @page_title = "Edit LE Arterial Form"
         @le_arterial_form = LeArterialForm.find(params[:id])
         @btnText = "Update"
     end
     
     def update
-        @hepatic_form = HepaticForm.find(params[:id])
+        @le_arterial_form = LeArterialForm.find(params[:id])
         if @le_arterial_form.update_attributes(le_arterial_params)
-            flash.alert = LE Arterial Form Updated
+            flash.alert = "LE Arterial Form Updated"
             redirect_to @le_arterial_form
         else
             render 'edit'
@@ -43,23 +43,14 @@ class LeArterialFormsController < ApplicationController
     
     def destroy
         LeArterialForm.find(params[:id]).destroy
-        flash.alert = LE Arterial Form Deleted
-        redirect_to current_user
+        flash.alert = "LE Arterial Form Deleted"
+        redirect_to root_url
     end
     
 private
     def le_arterial_params
-        params.require(:le_arterial_form).permit(   :forms [:age,
-                                                            :gender,
-                                                            :technologist_id,
-                                                            :bpRight,
-                                                            :bpLeft,
-                                                            :history,
-                                                            :symptoms,
-                                                            :prelimResults,
-                                                            :patientResults],
-                                                            :ankleBPRight,
-                                                            :ankleBPLeft,
+        params.require(:le_arterial_form).permit(   :ankleBPRight,
+                                                    :ankleBPLeft,
                                                             :indications,
                                                             :prevSurgery,
                                                             :vascularDisease,
@@ -106,7 +97,16 @@ private
                                                             :otherProxRight,
                                                             :otherProxLeft,
                                                             :otherDistRight,
-                                                            :otherDistLeft)
+                                                            :otherDistLeft,
+                                                            :form_attributes => [:age,
+                                                :gender_id,
+                                                :technologist_id,
+                                                :bpRight,
+                                                :bpLeft,
+                                                :history,
+                                                :symptoms,
+                                                :prelimResults,
+                                                :patientResults])
     end
     
     def correct_user

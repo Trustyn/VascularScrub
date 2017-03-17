@@ -22,7 +22,7 @@ class UeArterialFormsController < ApplicationController
     
     def index
         @page_title = "All UE Arterial Forms"
-        @ue_arterial_form = UeArterialForm.all
+        @ue_arterial_forms = UeArterialForm.all
     end
     
     def edit
@@ -42,9 +42,9 @@ class UeArterialFormsController < ApplicationController
     end
     
     def destroy
-        UeArterialForm.find(params[:id].destroy)
+        UeArterialForm.find(params[:id]).destroy
         flash.alert = "UE Arterial Form Deleted"
-        redirect_to current_user
+        redirect_to root_url
     end
     
 private
@@ -86,7 +86,16 @@ private
                                                     :palmarPSVRight, 
                                                     :palmarPSVLeft,
                                                     :palmarEDVRight, 
-                                                    :palmarEDVLeft ) 
+                                                    :palmarEDVLeft,
+                                                    :form_attributes => [:age,
+                                                :gender_id,
+                                                :technologist_id,
+                                                :bpRight,
+                                                :bpLeft,
+                                                :history,
+                                                :symptoms,
+                                                :prelimResults,
+                                                :patientResults]) 
     end
     
     def correct_user

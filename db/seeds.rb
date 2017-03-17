@@ -28,3 +28,7 @@ Gender.create(gender: "Female")
 User.create(username: "Trustyn", firstname: "Branden", lastname: "Alder",
             email: "trustyn@vascularscrub.com", password: "Password1",
             password_confirmation: "Password1", activated: true)
+
+User.create(username: "Test", firstname: "Jonny", lastname: "Bravo",
+            email: "jonnyb@vascularscrub.com", password: "Password1",
+            password_confirmation: "Password1", activated: true)

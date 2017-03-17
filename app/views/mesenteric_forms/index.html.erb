@@ -3,7 +3,7 @@
 <table>
     <% @mesenteric_forms.each do |mesenteric_form| %>
     <tr>
-        <td><%= link_to mesenteric_form.id, :action =>'show', :id => mesenteric_form.id %></td>
+        <td><%= link_to "Form #{mesenteric_form.id}", :action =>'show', :id => mesenteric_form.id %></td>
         <td><%= link_to 'Edit', edit_mesenteric_form_path(mesenteric_form) %></td>
         <td><%= link_to 'Delete', mesenteric_form, method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>

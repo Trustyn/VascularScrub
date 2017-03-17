@@ -32,7 +32,7 @@ class RenalFormsController < ApplicationController
     end
     
     def update
-        @carotid_form = CarotidForm.find(params[:id])
+        @renal_form = RenalForm.find(params[:id])
         if @renal_form.update_attributes(renal_params)
             flash.alert = "Renal Form Updated"
             redirect_to @renal_form
@@ -44,20 +44,12 @@ class RenalFormsController < ApplicationController
     def destroy
         RenalForm.find(params[:id]).destroy
         flash.alert = "Renal Form Deleted"
-        redirect_to current_user
+        redirect_to root_url
     end
     
 private
     def renal_params
-        params.require(:renal_form).permit(   :forms [:age,
-                                                    :gender,
-                                                    :technologist_id,
-                                                    :bpRight,
-                                                    :bpLeft,
-                                                    :history,
-                                                    :symptoms,
-                                                    :prelimResults,
-                                                    :patientResults],
+        params.require(:renal_form).permit(   
                                                     :hypertension,
                                                     :atherosclerosis,
                                                     :renalStenosis,
@@ -198,7 +190,16 @@ private
                                                     :renalSizeRightDS,
                                                     :renalSizeLeftDS,
                                                     :renalSizeRightRAR,
-                                                    :renalSizeLeftRAR)
+                                                    :renalSizeLeftRAR,
+                                                    :form_attributes => [:age,
+                                                :gender_id,
+                                                :technologist_id,
+                                                :bpRight,
+                                                :bpLeft,
+                                                :history,
+                                                :symptoms,
+                                                :prelimResults,
+                                                :patientResults])
     end
     
     def correct_user

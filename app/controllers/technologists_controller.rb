@@ -1,14 +1,14 @@
 class TechnologistsController < ApplicationController
      
   def new
-    @technologist = current_user.technologists.build
-    @technologist.form.build
+    @technologist = Technologist.new
+    #@technologist.form.build
     @btnText = "Add"
   end
   
   
   def create
-    @technologist = current_user.technologists.build(technologist_params)
+    @technologist = Technologist.new(technologist_params)
     if @technologist.save
       flash.notice = "Technologist Added"
       redirect_to @technologist
@@ -50,7 +50,7 @@ class TechnologistsController < ApplicationController
   def destroy
     Technologist.find(params[:id]).destroy
     flash.alert = "Technologist Deleted"
-    redirect_to current_user
+    redirect_to root_url
     
   end
   
